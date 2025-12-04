@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why I Fell in Love with Clean Code | Hasinova</title>
+  <title>Tech | Hasinova</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
     body {
@@ -23,10 +23,37 @@
       margin-bottom: 10px;
     }
 
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .post {
+      margin-bottom: 60px;
+    }
+
     .post-meta {
       color: #777;
       font-size: 0.9em;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     img.post-image {
@@ -41,9 +68,13 @@
       margin-bottom: 16px;
     }
 
+    ul {
+      margin-bottom: 16px;
+    }
+
     a.back-link {
       display: inline-block;
-      margin-top: 40px;
+      margin-top: 20px;
       text-decoration: none;
       color: #007BFF;
       font-weight: bold;
@@ -52,35 +83,69 @@
     a.back-link:hover {
       text-decoration: underline;
     }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Why I Fell in Love with Clean Code</h1>
-  <p class="post-meta">Published on December 4, 2025 | Category: Tech</p>
-  <img src="../assets/images/sample-tech.jpg" alt="Clean Code" class="post-image">
+  <h1>Hasinova Tech</h1>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tech.html">Tech</a></li>
+      <li><a href="../poems/sea.html">Poems</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<article>
-  <p>When I first started coding, my scripts were messy. Variables had names like <code>x1</code>, <code>temp</code>, and functions did too many things at once. It worked, but it wasn’t readable — not for me, and certainly not for anyone else.</p>
+<main>
+  <!-- Existing Blog Post -->
+  <article class="post">
+    <h2>Why I Fell in Love with Clean Code</h2>
+    <p class="post-meta">Published on December 4, 2025 | Category: Tech</p>
+    <img src="../assets/images/sample-tech.jpg" alt="Clean Code" class="post-image">
+    <p>When I first started coding, my scripts were messy. Variables had names like <code>x1</code>, <code>temp</code>, and functions did too many things at once. It worked, but it wasn’t readable — not for me, and certainly not for anyone else.</p>
+    <p>Over time, I realized that writing clean code isn’t just about making things look pretty. It’s about respect: respect for anyone who reads your code, respect for your future self, and respect for the craft of programming itself. Clean code allows me to think more clearly, debug faster, and build features with confidence.</p>
+    <p>Some lessons I learned along the way:</p>
+    <ul>
+      <li><strong>Meaningful names:</strong> Use clear variable and function names — it’s like documenting your code without comments.</li>
+      <li><strong>Single responsibility:</strong> Each function should do one thing and do it well.</li>
+      <li><strong>Readable formatting:</strong> Consistent indentation, spacing, and structure help your code breathe.</li>
+      <li><strong>Refactoring:</strong> Don’t be afraid to revisit old code and make it cleaner.</li>
+    </ul>
+    <p>By focusing on these principles, I started to enjoy coding more. Mistakes became easier to spot, collaboration with classmates improved, and projects felt… alive. Writing clean code isn’t just a habit; it’s a mindset that shapes how I approach every problem.</p>
+    <p>And that’s why I fell in love with clean code — not for the perfection it brings, but for the clarity, care, and creativity it allows.</p>
+    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+  </article>
 
-  <p>Over time, I realized that writing clean code isn’t just about making things look pretty. It’s about respect: respect for anyone who reads your code, respect for your future self, and respect for the craft of programming itself. Clean code allows me to think more clearly, debug faster, and build features with confidence.</p>
+  <!-- Group Project Post -->
+  <article class="post">
+    <h2>My Group Project</h2>
+    <p class="post-meta">Published on December 4, 2025 | Category: Tech</p>
+    <img src="../assets/images/group-project.jpg" alt="Group Project" class="post-image">
+    <p>In our collaborative project, we explored modern web development using HTML, CSS, and JavaScript. Each team member contributed unique skills — from design to coding — resulting in a functional, interactive website.</p>
+    <p>Key lessons learned from the project:</p>
+    <ul>
+      <li><strong>Teamwork:</strong> Communication and coordination are crucial to success.</li>
+      <li><strong>Version control:</strong> Using Git ensured we didn’t overwrite each other’s work.</li>
+      <li><strong>Problem-solving:</strong> Collaborating on challenges taught us creative solutions.</li>
+      <li><strong>Presentation:</strong> Documenting our work and sharing demos improved clarity.</li>
+    </ul>
+    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+  </article>
+</main>
 
-  <p>Some lessons I learned along the way:</p>
-  <ul>
-    <li><strong>Meaningful names:</strong> Use clear variable and function names — it’s like documenting your code without comments.</li>
-    <li><strong>Single responsibility:</strong> Each function should do one thing and do it well.</li>
-    <li><strong>Readable formatting:</strong> Consistent indentation, spacing, and structure help your code breathe.</li>
-    <li><strong>Refactoring:</strong> Don’t be afraid to revisit old code and make it cleaner.</li>
-  </ul>
-
-  <p>By focusing on these principles, I started to enjoy coding more. Mistakes became easier to spot, collaboration with classmates improved, and projects felt… alive. Writing clean code isn’t just a habit; it’s a mindset that shapes how I approach every problem.</p>
-
-  <p>And that’s why I fell in love with clean code — not for the perfection it brings, but for the clarity, care, and creativity it allows.</p>
-
-  <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
-</article>
+<footer>
+  <p>&copy; 2025 Hasinova</p>
+</footer>
 
 </body>
 </html>
