@@ -1,10 +1,10 @@
-# Workflow for deploying static blog to GitHub Pages
+# Workflow for deploying a static blog to GitHub Pages
 name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]  # Change if your main branch has a different name
-  workflow_dispatch:
+    branches: ["main"]   # Change if your default branch is different
+  workflow_dispatch:      # Allows manual trigger
 
 permissions:
   contents: read
@@ -23,22 +23,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Setup GitHub Pages deployment
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload blog files
+      # Step 3: Upload all repository files as artifact (safe for beginners)
+      - name: Upload all files
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload only the folders and files needed for the site
-          path: |
-            posts
-            assets
-            *.html
-            favicon.ico  # optional if you have one
+          path: '.'   # Upload everything in the repo
 
+      # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
