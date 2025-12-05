@@ -20,13 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${post.excerpt}</p>
         `;
 
-        // Append to appropriate container
-        if (latestContainer) latestContainer.appendChild(postCard);
+        // Latest section
+        if (latestContainer) latestContainer.appendChild(postCard.cloneNode(true));
 
+        // Tech page
         if (techContainer && post.category === "Tech") {
           techContainer.appendChild(postCard.cloneNode(true));
         }
 
+        // Poems page
         if (poemContainer && post.category === "Poem") {
           poemContainer.appendChild(postCard.cloneNode(true));
         }
