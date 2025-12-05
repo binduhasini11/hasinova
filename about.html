@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* Make the profile image circular and responsive */
     .about-image {
       width: 200px;
       height: 200px;
@@ -15,14 +14,7 @@
       object-fit: cover;
       border: 4px solid #fff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
     }
-
-    /* Optional hover effect */
-    .about-image:hover {
-      transform: scale(1.05);
-    }
-
     .about-container {
       display: flex;
       align-items: center;
@@ -31,78 +23,45 @@
       justify-content: center;
       padding: 40px 20px;
     }
-
-    .about-text {
-      max-width: 600px;
-    }
-
+    .about-text { max-width: 600px; }
     .about-highlight {
       background-color: #f0f0f0;
       padding: 15px 20px;
       margin-top: 20px;
       border-radius: 10px;
     }
-
     @media (max-width: 768px) {
-      .about-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .about-text {
-        margin-top: 20px;
-      }
-
-      .about-image {
-        width: 150px;
-        height: 150px;
-      }
+      .about-container { flex-direction: column; text-align: center; }
+      .about-text { margin-top: 20px; }
+      .about-image { width: 150px; height: 150px; }
     }
   </style>
 </head>
-
 <body>
   <!-- HEADER -->
   <header class="site-header">
-    <div class="logo">
-      <a href="index.html"><span class="hasini">HASINO</span><span class="nova">VA</span></a>
-    </div>
+    <div class="logo"><a href="index.html"><span class="hasini">HASINO</span><span class="nova">VA</span></a></div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
-      <a href="#">Tech</a>
-      <a href="#">Guides</a>
-      <a href="#">Poems</a>
-      <a href="#">Contact</a>
+      <a href="tech.html">Tech</a>
+      <a href="guide.html">Guides</a>
+      <a href="poems.html">Poems</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <!-- ABOUT SECTION -->
   <section class="about">
     <div class="about-container">
-      <!-- Profile image -->
       <img src="assets/images/me.jpg" alt="Bindu Hasini" class="about-image">
-
       <div class="about-text">
         <h1>About <span>Hasinova</span></h1>
-        <p>
-          Hi, I’m <strong>Bindu Hasini</strong> — the writer, developer, and dreamer behind <strong>Hasinova</strong>.  
-          This space was born out of my love for both structured logic and untamed creativity.  
-        </p>
-
-        <p>
-          <em>Hasinova</em> is where <strong>technology meets art</strong>: I write about the things I learn while coding,
-          the ideas that spark during late debugging nights, and the quiet poems that come alive between them.  
-        </p>
-
-        <p>
-          It’s part tech journal, part personal diary — a place for <strong>guides, reflections, and verses</strong>.  
-          I like to think of it as a constellation of thoughts — each post a tiny light in the digital night.
-        </p>
-
+        <p>Hi, I’m <strong>Bindu Hasini</strong> — the writer, developer, and dreamer behind <strong>Hasinova</strong>.</p>
+        <p><em>Hasinova</em> is where <strong>technology meets art</strong>: guides, coding musings, and quiet poetry.</p>
+        <p>It’s a personal journal, a constellation of thoughts — each post a tiny light in the digital night.</p>
         <div class="about-highlight">
-          <p>✨ <strong>In short:</strong> Hasinova is my digital notebook — documenting how code, stories, and poetry
-          intertwine to make sense of a chaotic, beautiful world.</p>
+          <p>✨ <strong>In short:</strong> Hasinova documents how code, stories, and poetry intertwine to make sense of the world.</p>
         </div>
       </div>
     </div>
