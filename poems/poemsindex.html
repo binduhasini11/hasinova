@@ -21,29 +21,13 @@
 
   <main>
     <h2>Poems & Writings</h2>
-    <div id="posts-container"></div>
 
-    <script src="../assets/js/main.js"></script>
-    <script>
-      fetch('../data/posts.json')
-        .then(res => res.json())
-        .then(posts => {
-          const poemPosts = posts.filter(p => p.category.toLowerCase() === 'poems');
-          const container = document.getElementById('posts-container');
-          poemPosts.forEach(post => {
-            container.innerHTML += `
-              <div class="post">
-                <a href="../${post.link}">
-                  <img src="../${post.thumbnail}" alt="${post.title}">
-                  <h3>${post.title}</h3>
-                  <p>${post.excerpt}</p>
-                </a>
-              </div>
-            `;
-          });
-        })
-        .catch(err => console.error(err));
-    </script>
+    <!-- This is where poem posts will load -->
+    <div id="poemPosts"></div>
   </main>
+
+  <!-- Use only main.js — it already handles category filtering -->
+  <script src="../assets/js/main.js"></script>
+
 </body>
 </html>
