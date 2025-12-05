@@ -6,6 +6,59 @@
   <title>About | Hasinova</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Make the profile image circular and responsive */
+    .about-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    /* Optional hover effect */
+    .about-image:hover {
+      transform: scale(1.05);
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .about-text {
+      max-width: 600px;
+    }
+
+    .about-highlight {
+      background-color: #f0f0f0;
+      padding: 15px 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text {
+        margin-top: 20px;
+      }
+
+      .about-image {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -27,7 +80,9 @@
   <!-- ABOUT SECTION -->
   <section class="about">
     <div class="about-container">
-      <img src="assets/images/placeholder.jpg" alt="Bindu Hasini" class="about-image">
+      <!-- Profile image -->
+      <img src="assets/images/me.jpg" alt="Bindu Hasini" class="about-image">
+
       <div class="about-text">
         <h1>About <span>Hasinova</span></h1>
         <p>
