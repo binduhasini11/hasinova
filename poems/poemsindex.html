@@ -5,75 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poems | Hasinova</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    ul.post-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul.post-list li {
-      margin-bottom: 20px;
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    ul.post-list li a {
-      text-decoration: none;
-      font-size: 1.2em;
-      color: #007BFF;
-    }
-
-    ul.post-list li a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="../index.html"><span class="hasini">HASINO</span><span class="nova">VA</span></a>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../tech/index.html">Tech</a>
+      <a href="index.html" class="active">Poems</a>
+      <a href="../guide.html">Guides</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
 
-<h1>Poems</h1>
-<ul class="post-list" id="postList">
-  <!-- Poems will be listed automatically -->
-</ul>
+  <!-- POEMS POSTS -->
+  <section class="latest-posts">
+    <h2>Poems</h2>
+    <div class="posts-container" id="poemPosts"></div>
+  </section>
 
-<script>
-  // List of poems in the poems folder
-  const poems = [
-    {
-      title: "The Sea",
-      link: "sea.html"
-    },
-    {
-      title: "Another Poem",
-      link: "anotherpoem.html"
-    }
-    // Add more poems here as you create them
-  ];
+  <footer>
+    <p>© 2025 <strong>Hasinova</strong> • Poems & Pixels</p>
+  </footer>
 
-  const postList = document.getElementById('postList');
-
-  poems.forEach(poem => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = poem.link;
-    a.textContent = poem.title;
-    li.appendChild(a);
-    postList.appendChild(li);
-  });
-</script>
-
+  <script>
+    fetch('../assets/data/posts.json')
+      .then(res => res.json())
+      .then(posts => {
+        const container = document.getElementById('poemPosts');
+        posts.filter(post => post.category === "Poem")
+             .sort((a,b) => new Date(b.date) - new Date(a.date))
+             .forEach(post => {
+               const postCard = document.createElement('div');
+               postCard.classList.add('post-card');
+               postCard.innerHTML = `
+                 <img src="../${post.thumbnail}" alt="${post.title}">
+                 <h3><a href="../${post.link}">${post.title}</a></h3>
+                 <p>${post.excerpt}</p>
+               `;
+               container.appendChild(postCard);
+             });
+      });
+  </script>
 </body>
 </html>
