@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<body class="soft-bg">
   <!-- HEADER -->
-  <header class="site-header">
+  <header class="site-header glass-header">
     <div class="logo">
       <a href="index.html"><span class="hasini">HASINO</span><span class="nova">VA</span></a>
     </div>
@@ -24,20 +25,31 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
+  <section class="hero pastel-hero">
+    <div class="floating-shapes">
+      <span class="float-bubble bubble1"></span>
+      <span class="float-bubble bubble2"></span>
+      <span class="float-bubble bubble3"></span>
+    </div>
+
+    <div class="hero-content fade-in-hero">
       <h1>Welcome to <span>Hasinova</span></h1>
-      <p>Where <strong>technology meets art</strong>. Discover guides, reflections, and creative musings.</p>
-      <a href="about.html" class="btn">Know Me</a>
+
+      <p>
+        A modern blend of <strong>technology, experiences, and poetry</strong> — written by 
+        <strong>Bindu Hasini</strong>.<br>
+        Here, I decode digital ideas, share creative journeys, and sometimes let words wander into verse.  
+        <br>Because every code and every poem tells a story.
+      </p>
+
+      <a href="about.html" class="btn pastel-btn">More About Me</a>
     </div>
   </section>
 
   <!-- LATEST POSTS -->
   <section class="latest-posts">
     <h2>Latest Posts</h2>
-    <div class="posts-container" id="latestPosts">
-      <!-- Posts will be dynamically loaded here -->
-    </div>
+    <div class="posts-container" id="latestPosts"></div>
   </section>
 
   <!-- FOOTER -->
@@ -45,34 +57,30 @@
     <p>© 2025 <strong>Hasinova</strong> — Where Code meets Poetry | Crafted by Bindu Hasini</p>
   </footer>
 
-  <!-- JS to load posts dynamically -->
+  <!-- POSTS LOADER JS (unchanged) -->
   <script>
     fetch('assets/data/posts.json')
       .then(res => res.json())
       .then(posts => {
         const container = document.getElementById('latestPosts');
-        
-        // Sort posts by date (latest first)
         posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-        
+
         posts.forEach(post => {
-          const postCard = document.createElement('div');
-          postCard.classList.add('post-card');
-          
-          // Adjust thumbnail and post link paths
-          let thumbnailPath = `assets/images/${post.thumbnail}`;
-          let postLink = post.link.startsWith('tech/') || post.link.startsWith('poems/') ? post.link : post.link;
-          
-          postCard.innerHTML = `
-            <img src="${thumbnailPath}" alt="${post.title}">
-            <h3><a href="${postLink}">${post.title}</a></h3>
+          const card = document.createElement('div');
+          card.classList.add('post-card', 'pastel-card');
+
+          let thumbnail = `assets/images/${post.thumbnail}`;
+
+          card.innerHTML = `
+            <img src="${thumbnail}" alt="${post.title}">
+            <h3><a href="${post.link}">${post.title}</a></h3>
             <p>${post.excerpt}</p>
           `;
-          
-          container.appendChild(postCard);
+
+          container.appendChild(card);
         });
-      })
-      .catch(err => console.error('Error loading posts:', err));
+      });
   </script>
 </body>
 </html>
+
