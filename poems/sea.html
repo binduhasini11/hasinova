@@ -5,62 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Sea | Hasinova</title>
 
-  <!-- Main site stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
-  <!-- Thumbnail for blog cards -->
-  <meta property="og:image" content="../assets/images/seaheader.jpg">
+  <style>
+    /* --- Background (soft beige + subtle grid + noise) --- */
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background-color: #eee7dd;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+        url("https://i.imgur.com/8fK4h6B.png");
+      background-size: 
+        40px 40px,
+        40px 40px,
+        300px;
+      color: #2a2a2a;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #3d4b40;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header image */
+    .post-header-image img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+    }
+
+    /* Post container */
+    .post-page {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+      color: #3d4b40;
+    }
+
+    .post-date {
+      color: #6b716b;
+      margin-bottom: 20px;
+    }
+
+    /* Poem styling */
+    pre.poem-text {
+      white-space: pre-wrap;
+      font-family: "Georgia", serif;
+      font-size: 1.1rem;
+      color: #2c2c2c;
+      background: rgba(255,255,255,0.4);
+      padding: 20px;
+      border-left: 4px solid #8a9b8c;
+      border-radius: 6px;
+      line-height: 1.8;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin: 50px 0;
+      color: #5d5d5d;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER / NAV -->
   <header>
-    <h1><span class="logo">Hasinova</span></h1>
+    <h1><span class="logo">Hasi<strong>nova</strong></span> 🌊</h1>
     <nav>
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../../about.html">About</a></li>
-        <li><a href="../../blog.html">Blog</a></li>
-        <li><a href="../../contact.html">Contact</a></li>
-      </ul>
+      <a href="../index.html">Home</a>
+      <a href="../tech/techindex.html">Tech</a>
+      <a href="poemsindex.html">Poems</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- TOP HEADER IMAGE -->
-  <section class="header-image">
-    <img src="../assets/images/sea.jpg" alt="The Sea">
+  <!-- Header Image -->
+  <section class="post-header-image">
+    <img src="../assets/images/seaheader.jpg" alt="Sea Header">
   </section>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
-    <article class="post">
-      <h2>The Sea</h2>
-      <p class="post-meta">Category: Poems</p>
+  <main class="post-page poem">
 
-      <p>
-        The sea is a mirror, a whisper, a story that hums beneath the quiet sky.
-        Its waves curl like secrets shaping themselves, again and again, into meaning.
-      </p>
+    <article>
+      <h2>The Sea 🌙</h2>
+      <p class="post-date">November 9, 2025 • Poem</p>
 
-      <p>
-        When I stand near it, I feel small in the softest way—held without being touched,
-        understood without speaking.
-      </p>
+      <pre class="poem-text">
+There's something about the sea that I always found to be soothing and assuring..
+It wasn't just the subtle sound of waves crashing against the shore,
+Or the blazing ball of fire setting at its core..
+The sea was ever changing, continuously renewed as it churned.
+And it didn't listen to anyone.
+No one told the sea it wasn't good enough. No one could predict or control it.
+It was calm and still a moment, rough and rigid the next.
+The sea made its own rules. It was the one thing man couldn't conquer.
+No one argued with power of that magnitude.
+Land was weak. It let itself be dominated, but the sea never folded.
+      </pre>
 
-      <p>
-        It teaches me rhythm. It teaches me return.
-      </p>
+      <p><strong>– Bindu Hasini</strong></p>
 
-      <p>
-        And most of all, it teaches me that even the strongest tides begin as a gentle pull.
-      </p>
+      <a href="poemsindex.html" class="back-link">&larr; Back to Poems</a>
     </article>
+
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Hasinova</p>
+    <p>© 2025 Hasinova • poems, pixels, and perspective 🌙</p>
   </footer>
 
 </body>
