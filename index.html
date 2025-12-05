@@ -16,8 +16,8 @@
     <nav class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
-      <a href="tech/index.html">Tech</a>
-      <a href="poems/index.html">Poems</a>
+      <a href="tech/techindex.html">Tech</a>
+      <a href="poems/poemsindex.html">Poems</a>
       <a href="guide.html">Guides</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -51,20 +51,28 @@
       .then(res => res.json())
       .then(posts => {
         const container = document.getElementById('latestPosts');
+        
         // Sort posts by date (latest first)
-        posts.sort((a,b) => new Date(b.date) - new Date(a.date));
+        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        
         posts.forEach(post => {
           const postCard = document.createElement('div');
           postCard.classList.add('post-card');
+          
+          // Adjust thumbnail and post link paths
+          let thumbnailPath = `assets/images/${post.thumbnail}`;
+          let postLink = post.link.startsWith('tech/') || post.link.startsWith('poems/') ? post.link : post.link;
+          
           postCard.innerHTML = `
-            <img src="${post.thumbnail}" alt="${post.title}">
-            <h3><a href="${post.link}">${post.title}</a></h3>
+            <img src="${thumbnailPath}" alt="${post.title}">
+            <h3><a href="${postLink}">${post.title}</a></h3>
             <p>${post.excerpt}</p>
           `;
+          
           container.appendChild(postCard);
         });
-      });
+      })
+      .catch(err => console.error('Error loading posts:', err));
   </script>
 </body>
 </html>
-
