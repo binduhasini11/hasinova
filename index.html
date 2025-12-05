@@ -6,6 +6,67 @@
   <title>Hasinova | Home</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Latest posts styling */
+    .posts-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .post-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 15px;
+      width: calc(33% - 20px);
+      box-sizing: border-box;
+      transition: transform 0.2s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .post-card img {
+      width: 100%;
+      border-radius: 8px;
+      max-height: 180px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .post-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+    }
+
+    .post-card h3 a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .post-card h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .post-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media screen and (max-width: 900px) {
+      .post-card {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .post-card {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -16,9 +77,9 @@
     <nav class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
-      <a href="tech.html">Tech</a>
+      <a href="tech/techindex.html">Tech</a>
       <a href="guide.html">Guides</a>
-      <a href="poems.html">Poems</a>
+      <a href="poems/poemsindex.html">Poems</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -35,13 +96,8 @@
   <!-- LATEST POSTS -->
   <section class="latest-posts">
     <h2>Latest Posts</h2>
-    <div class="posts-container">
-      <!-- Example Post Card -->
-      <div class="post-card">
-        <img src="assets/images/sample-tech.jpg" alt="Clean Code">
-        <h3><a href="posts/tech.html">Why I Fell in Love with Clean Code</a></h3>
-        <p>How I went from messy scripts to mindful structure — and found that writing clean code is an act of respect, not just habit.</p>
-      </div>
+    <div class="posts-container" id="latestPosts">
+      <!-- Posts will be populated dynamically -->
     </div>
   </section>
 
@@ -49,5 +105,45 @@
   <footer>
     <p>© 2025 <strong>Hasinova</strong> — Where Code meets Poetry | Crafted by Bindu Hasini</p>
   </footer>
+
+  <script>
+    // Array of latest posts (Tech + Poems)
+    const latestPosts = [
+      {
+        title: "Why I Fell in Love with Clean Code",
+        link: "tech/tech.html",
+        image: "assets/images/ccheader.jpg",
+        excerpt: "How I went from messy scripts to mindful structure — and found that writing clean code is an act of respect, not just habit."
+      },
+      {
+        title: "What My First Project Taught Me",
+        link: "tech/groupproject.html",
+        image: "assets/images/sample-tech.jpg",
+        excerpt: "Lessons learned from building my first student task manager project from scratch."
+      },
+      {
+        title: "The Sea",
+        link: "poems/sea.html",
+        image: "assets/images/seaheader.jpg",
+        excerpt: "A reflective poem about the calm, chaos, and beauty of the sea."
+      }
+      // Add new posts here as you create them
+    ];
+
+    const container = document.getElementById('latestPosts');
+
+    latestPosts.forEach(post => {
+      const postCard = document.createElement('div');
+      postCard.classList.add('post-card');
+
+      postCard.innerHTML = `
+        <img src="${post.image}" alt="${post.title}">
+        <h3><a href="${post.link}">${post.title}</a></h3>
+        <p>${post.excerpt}</p>
+      `;
+
+      container.appendChild(postCard);
+    });
+  </script>
 </body>
 </html>
