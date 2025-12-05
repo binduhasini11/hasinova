@@ -9,11 +9,13 @@
 </head>
 
 <body class="soft-bg">
+
   <!-- HEADER -->
   <header class="site-header glass-header">
     <div class="logo">
       <a href="index.html"><span class="hasini">HASINO</span><span class="nova">VA</span></a>
     </div>
+
     <nav class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
@@ -26,17 +28,21 @@
 
   <!-- HERO SECTION -->
   <section class="hero pastel-hero">
+
+    <!-- Floating Ghibli-like elements -->
     <div class="floating-shapes">
       <span class="float-bubble bubble1"></span>
       <span class="float-bubble bubble2"></span>
       <span class="float-bubble bubble3"></span>
+      <span class="float-bubble bubble4"></span>
+      <span class="float-bubble bubble5"></span>
     </div>
 
     <div class="hero-content fade-in-hero">
       <h1>Welcome to <span>Hasinova</span></h1>
 
       <p>
-        A modern blend of <strong>technology, experiences, and poetry</strong> — written by 
+        A modern blend of <strong>technology, experiences, and poetry</strong> — crafted by 
         <strong>Bindu Hasini</strong>.<br>
         Here, I decode digital ideas, share creative journeys, and sometimes let words wander into verse.  
         <br>Because every code and every poem tells a story.
@@ -44,6 +50,7 @@
 
       <a href="about.html" class="btn pastel-btn">More About Me</a>
     </div>
+
   </section>
 
   <!-- LATEST POSTS -->
@@ -57,12 +64,13 @@
     <p>© 2025 <strong>Hasinova</strong> — Where Code meets Poetry | Crafted by Bindu Hasini</p>
   </footer>
 
-  <!-- POSTS LOADER JS (unchanged) -->
+  <!-- POSTS LOADER -->
   <script>
     fetch('assets/data/posts.json')
       .then(res => res.json())
       .then(posts => {
         const container = document.getElementById('latestPosts');
+
         posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
         posts.forEach(post => {
@@ -81,6 +89,6 @@
         });
       });
   </script>
+
 </body>
 </html>
-
