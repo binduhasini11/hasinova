@@ -3,54 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Posts | Hasinova</title>
+  <title>Tech | Hasinova</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="logo">
-      <a href="../index.html"><span class="hasini">HASINO</span><span class="nova">VA</span></a>
-    </div>
-    <nav class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="index.html" class="active">Tech</a>
-      <a href="../guide.html">Guides</a>
-      <a href="../poems/index.html">Poems</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
+  <header>
+    <h1 class="logo">Hasinova</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="techindex.html" class="active">Tech</a></li>
+        <li><a href="../poems/poemsindex.html">Poems</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- TECH POSTS -->
-  <section class="latest-posts">
+  <main>
     <h2>Tech Posts</h2>
-    <div class="posts-container" id="techPosts"></div>
-  </section>
+    <div id="posts-container"></div>
 
-  <footer>
-    <p>© 2025 <strong>Hasinova</strong> • Tech & Thoughts</p>
-  </footer>
-
-  <script>
-    fetch('../assets/data/posts.json')
-      .then(res => res.json())
-      .then(posts => {
-        const container = document.getElementById('techPosts');
-        posts.filter(post => post.category === "Tech")
-             .sort((a,b) => new Date(b.date) - new Date(a.date))
-             .forEach(post => {
-               const postCard = document.createElement('div');
-               postCard.classList.add('post-card');
-               postCard.innerHTML = `
-                 <img src="../${post.thumbnail}" alt="${post.title}">
-                 <h3><a href="../${post.link}">${post.title}</a></h3>
-                 <p>${post.excerpt}</p>
-               `;
-               container.appendChild(postCard);
-             });
-      });
-  </script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+      fetch('../data/posts.json')
+        .then(res => res.json())
+        .then(posts => {
+          const techPosts = posts.filter(p => p.category.toLowerCase() === 'tech');
+          const container = document.getElementById('posts-container');
+          techPosts.forEach(post => {
+            container.innerHTML += `
+              <div class="post">
+                <a href="../${post.link}">
+                  <img src="../${post.thumbnail}" alt="${post.title}">
+                  <h3>${post.title}</h3>
+                  <p>${post.excerpt}</p>
+                </a>
+              </div>
+            `;
+          });
+        })
+        .catch(err => console.error(err));
+    </script>
+  </main>
 </body>
 </html>
