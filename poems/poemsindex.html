@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poems | Hasinova</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    ul.post-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.post-list li {
+      margin-bottom: 20px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    ul.post-list li a {
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #007BFF;
+    }
+
+    ul.post-list li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Poems</h1>
+<ul class="post-list" id="postList">
+  <!-- Poems will be listed automatically -->
+</ul>
+
+<script>
+  // List of poems in the poems folder
+  const poems = [
+    {
+      title: "The Sea",
+      link: "sea.html"
+    },
+    {
+      title: "Another Poem",
+      link: "anotherpoem.html"
+    }
+    // Add more poems here as you create them
+  ];
+
+  const postList = document.getElementById('postList');
+
+  poems.forEach(poem => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = poem.link;
+    a.textContent = poem.title;
+    li.appendChild(a);
+    postList.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
