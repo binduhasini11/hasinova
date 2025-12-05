@@ -9,12 +9,14 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #222;
   line-height: 1.6;
-  background-color: #f7f1e9; /* soft beige */
+  background-color: #f3ece2; /* soft beige */
   background-image:
-    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
-    url("https://i.imgur.com/8fK4h6B.png"); /* subtle noise */
-  background-size: 40px 40px, 40px 40px, 300px;
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #222;
+}
+
 }
 
 /* HEADER */
@@ -239,3 +241,4 @@ footer strong {
   margin-bottom: 40px;
   border-radius: 8px;
 }
+
