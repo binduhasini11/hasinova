@@ -1,24 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta-name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Sea | Hasinova</title>
+
   <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    /* --- Background (soft beige + subtle grid + noise) --- */
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background-color: #eee7dd;
+      background-image:
+        /* dotted grid */
+        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+        /* soft noise */
+        url("https://i.imgur.com/8fK4h6B.png");
+      background-size: 
+        40px 40px,
+        40px 40px,
+        300px;
+      color: #2a2a2a;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #3d4b40;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header image */
+    .post-header-image img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+    }
+
+    /* Post container */
+    .post-page {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+      color: #3d4b40;
+    }
+
+    .post-date {
+      color: #6b716b;
+      margin-bottom: 20px;
+    }
+
+    /* Poem styling */
+    pre.poem-text {
+      white-space: pre-wrap;
+      font-family: "Georgia", serif;
+      font-size: 1.1rem;
+      color: #2c2c2c;
+      background: rgba(255,255,255,0.4);
+      padding: 20px;
+      border-left: 4px solid #8a9b8c;
+      border-radius: 6px;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      margin: 50px 0;
+      color: #5d5d5d;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 
 <body>
 
   <header>
-    <h1><span class="logo">Hasi<strong>nova</strong></span></h1>
+    <h1><span class="logo">Hasi<strong>nova</strong></span> 🌊</h1>
     <nav>
       <a href="../index.html">Home</a>
+      <a href="../tech/index.html">Tech</a>
+      <a href="index.html">Poems</a>
       <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- NEW HEADER IMAGE SECTION -->
+  <!-- Header Image -->
   <section class="post-header-image">
     <img src="../assets/images/seaheader.jpg" alt="Sea Header">
   </section>
@@ -26,7 +122,7 @@
   <main class="post-page poem">
 
     <article>
-      <h2>The Sea</h2>
+      <h2>The Sea 🌙</h2>
       <p class="post-date">November 9, 2025 • Poem</p>
 
       <pre class="poem-text">
