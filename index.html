@@ -3,56 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hasinova | Tech, Tales & Thoughts</title>
+  <title>Hasinova</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
+
+  <!-- Header/Navbar -->
+  <header>
     <div class="logo">
-      <span class="hasini">HASINO</span><span class="nova">VA</span>
+      <h1>HASINOVA</h1>
     </div>
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="#">Tech</a>
-      <a href="#">Guides</a>
-      <a href="#">Poems</a>
-      <a href="#">Contact</a>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tech/index.html">Tech</a></li>
+        <li><a href="guide.html">Guides</a></li>
+        <li><a href="poems/index.html">Poems</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- INTRO -->
-  <section class="intro">
-    <div class="intro-content">
-      <h2>Welcome to <span>Hasinova</span></h2>
-      <p>
-        A modern blend of <strong>technology, experiences, and poetry</strong> — written by 
-        <strong>Bindu Hasini</strong>.<br>
-        Here, I decode digital ideas, share creative journeys, and sometimes let words wander into verse.  
-        <br>Because every code and every poem tells a story.
-      </p>
-    </div>
-  </section>
-
-  <!-- LATEST STORIES -->
-  <section class="latest">
-    <h2>Latest from Hasinova</h2>
-    <div id="posts-container" class="posts">
-      <!-- JS will load posts here -->
-    </div>
-    <p id="no-posts" class="no-posts" style="display:none;">
-      No stories yet — stay tuned for upcoming guides, thoughts, and poems from Hasinova ✨
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to <span class="highlight">Hasinova</span></h2>
+    <p>
+      A modern blend of <strong>technology, experiences, and poetry</strong> — written by <strong>Bindu Hasini</strong>.
+      <br><br>
+      Here, I decode digital ideas, share creative journeys, and sometimes let words wander into verse.
+      <br>
+      Because every code and every poem tells a story.
     </p>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Latest Section -->
+  <section class="latest">
+    <h2>Latest from Hasinova</h2>
+
+    <div class="posts-grid">
+
+      <!-- Latest Tech Post Card -->
+      <div class="card">
+        <img src="assets/images/ccheader.jpg" alt="Clean Code">
+        <h3>Why I Fell in Love with Clean Code</h3>
+        <p>A journey from messy scripts to intentional coding.</p>
+        <a href="tech/clean-code.html" class="btn">Read More →</a>
+      </div>
+
+      <!-- Group Project -->
+      <div class="card">
+        <img src="assets/images/projectheader.jpg" alt="Group Project">
+        <h3>My Group Project</h3>
+        <p>How teamwork and web development blended into one story.</p>
+        <a href="tech/groupproject.html" class="btn">Read More →</a>
+      </div>
+
+      <!-- Poem Card -->
+      <div class="card">
+        <img src="assets/images/sea.jpg" alt="Sea Poem">
+        <h3>The Sea</h3>
+        <p>A calm poem capturing the ocean’s whispers.</p>
+        <a href="poems/sea.html" class="btn">Read More →</a>
+      </div>
+
+    </div>
+  </section>
+
   <footer>
-    <p>© 2025 <strong>Hasinova</strong> — Where Code meets Poetry | Crafted by Bindu Hasini</p>
+    <p>&copy; 2025 Hasinova</p>
   </footer>
 
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
