@@ -21,29 +21,13 @@
 
   <main>
     <h2>Tech Posts</h2>
-    <div id="posts-container"></div>
 
-    <script src="../assets/js/main.js"></script>
-    <script>
-      fetch('../data/posts.json')
-        .then(res => res.json())
-        .then(posts => {
-          const techPosts = posts.filter(p => p.category.toLowerCase() === 'tech');
-          const container = document.getElementById('posts-container');
-          techPosts.forEach(post => {
-            container.innerHTML += `
-              <div class="post">
-                <a href="../${post.link}">
-                  <img src="../${post.thumbnail}" alt="${post.title}">
-                  <h3>${post.title}</h3>
-                  <p>${post.excerpt}</p>
-                </a>
-              </div>
-            `;
-          });
-        })
-        .catch(err => console.error(err));
-    </script>
+    <!-- main.js will auto-fill this -->
+    <div id="techPosts"></div>
   </main>
+
+  <!-- Only this script is needed -->
+  <script src="../assets/js/main.js"></script>
+
 </body>
 </html>
