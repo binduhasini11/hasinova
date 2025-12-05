@@ -1,27 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const postsContainer = document.getElementById("posts-container");
-  const noPostsMsg = document.getElementById("no-posts");
+  const latestContainer = document.getElementById("latestPosts");
+  const techContainer = document.getElementById("techPosts");
+  const poemContainer = document.getElementById("poemPosts");
 
-  fetch("posts/posts.json")
+  fetch("assets/data/posts.json")
     .then(res => res.json())
     .then(posts => {
-      if (!posts || posts.length === 0) {
-        noPostsMsg.style.display = "block";
-        return;
-      }
+      if (!posts || posts.length === 0) return;
+
+      // Sort by date (latest first)
+      posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
       posts.forEach(post => {
-        const article = document.createElement("article");
-        article.innerHTML = `
+        const postCard = document.createElement("div");
+        postCard.classList.add("post-card");
+        postCard.innerHTML = `
           <img src="${post.thumbnail}" alt="${post.title}">
-          <h3>${post.title}</h3>
+          <h3><a href="${post.link}">${post.title}</a></h3>
           <p>${post.excerpt}</p>
-          <a href="${post.link}" class="read">Read ${post.category === 'Poem' ? 'Poem' : 'More'} →</a>
         `;
-        postsContainer.appendChild(article);
+
+        // Append to appropriate container
+        if (latestContainer) latestContainer.appendChild(postCard);
+
+        if (techContainer && post.category === "Tech") {
+          techContainer.appendChild(postCard.cloneNode(true));
+        }
+
+        if (poemContainer && post.category === "Poem") {
+          poemContainer.appendChild(postCard.cloneNode(true));
+        }
       });
     })
-    .catch(() => {
-      noPostsMsg.style.display = "block";
+    .catch(err => {
+      console.error("Error loading posts:", err);
     });
 });
