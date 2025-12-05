@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Posts | Hasinova</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    ul.post-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.post-list li {
+      margin-bottom: 20px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    ul.post-list li a {
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #007BFF;
+    }
+
+    ul.post-list li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Tech Posts</h1>
+<ul class="post-list" id="postList">
+  <!-- Posts will be listed here automatically -->
+</ul>
+
+<script>
+  // List of posts in the tech folder
+  const techPosts = [
+    {
+      title: "Why I Fell in Love with Clean Code",
+      link: "tech.html"
+    },
+    {
+      title: "What My First Project Taught Me",
+      link: "groupproject.html"
+    }
+  ];
+
+  const postList = document.getElementById('postList');
+
+  techPosts.forEach(post => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = post.link;
+    a.textContent = post.title;
+    li.appendChild(a);
+    postList.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
