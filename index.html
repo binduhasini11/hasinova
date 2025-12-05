@@ -3,78 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hasinova</title>
+  <title>Hasinova | Home</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-  <!-- Header/Navbar -->
-  <header>
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="logo">
-      <h1>HASINOVA</h1>
+      <a href="index.html"><span class="hasini">HASINO</span><span class="nova">VA</span></a>
     </div>
-
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="tech/index.html">Tech</a></li>
-        <li><a href="guide.html">Guides</a></li>
-        <li><a href="poems/index.html">Poems</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="tech.html">Tech</a>
+      <a href="guide.html">Guides</a>
+      <a href="poems.html">Poems</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO SECTION -->
   <section class="hero">
-    <h2>Welcome to <span class="highlight">Hasinova</span></h2>
-    <p>
-      A modern blend of <strong>technology, experiences, and poetry</strong> — written by <strong>Bindu Hasini</strong>.
-      <br><br>
-      Here, I decode digital ideas, share creative journeys, and sometimes let words wander into verse.
-      <br>
-      Because every code and every poem tells a story.
-    </p>
-  </section>
-
-  <!-- Latest Section -->
-  <section class="latest">
-    <h2>Latest from Hasinova</h2>
-
-    <div class="posts-grid">
-
-      <!-- Latest Tech Post Card -->
-      <div class="card">
-        <img src="assets/images/ccheader.jpg" alt="Clean Code">
-        <h3>Why I Fell in Love with Clean Code</h3>
-        <p>A journey from messy scripts to intentional coding.</p>
-        <a href="tech/clean-code.html" class="btn">Read More →</a>
-      </div>
-
-      <!-- Group Project -->
-      <div class="card">
-        <img src="assets/images/projectheader.jpg" alt="Group Project">
-        <h3>My Group Project</h3>
-        <p>How teamwork and web development blended into one story.</p>
-        <a href="tech/groupproject.html" class="btn">Read More →</a>
-      </div>
-
-      <!-- Poem Card -->
-      <div class="card">
-        <img src="assets/images/sea.jpg" alt="Sea Poem">
-        <h3>The Sea</h3>
-        <p>A calm poem capturing the ocean’s whispers.</p>
-        <a href="poems/sea.html" class="btn">Read More →</a>
-      </div>
-
+    <div class="hero-content">
+      <h1>Welcome to <span>Hasinova</span></h1>
+      <p>Where <strong>technology meets art</strong>. Discover guides, reflections, and creative musings.</p>
+      <a href="about.html" class="btn">Know Me</a>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Hasinova</p>
-  </footer>
+  <!-- LATEST POSTS -->
+  <section class="latest-posts">
+    <h2>Latest Posts</h2>
+    <div class="posts-container">
+      <!-- Example Post Card -->
+      <div class="post-card">
+        <img src="assets/images/sample-tech.jpg" alt="Clean Code">
+        <h3><a href="posts/tech.html">Why I Fell in Love with Clean Code</a></h3>
+        <p>How I went from messy scripts to mindful structure — and found that writing clean code is an act of respect, not just habit.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <strong>Hasinova</strong> — Where Code meets Poetry | Crafted by Bindu Hasini</p>
+  </footer>
 </body>
 </html>
