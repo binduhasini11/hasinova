@@ -11,7 +11,10 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: #fafafa;
+      background: 
+        radial-gradient(rgba(255,255,255,0.4), rgba(240,235,255,0.7)),
+        url("https://www.transparenttextures.com/patterns/dot-grid.png"); 
+      background-size: cover;
       color: #333;
       max-width: 820px;
       margin: 0 auto;
@@ -40,9 +43,11 @@
 
     .post-image {
       width: 100%;
-      border-radius: 14px;
-      margin: 20px 0 30px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      height: 140px; /* approx 3cm */
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 10px 0 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
 
     nav a {
@@ -91,14 +96,15 @@
       text-decoration: underline;
     }
 
-    /* soft floating highlight box */
+    /* softer highlight box */
     .soft-box {
-      background: #f6f9f7;
-      padding: 18px 20px;
-      border-left: 4px solid #9bc8b5;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(4px);
+      padding: 16px 20px;
+      border-left: 4px solid rgba(150, 120, 200, 0.3);
       border-radius: 10px;
       margin: 25px 0;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
     }
   </style>
 </head>
@@ -121,30 +127,30 @@
 
 <article>
 
-  <p>When I first started coding, my scripts were messy. Variables had names like x1 or temp, and functions tried to do too many things at once. The programs worked, but they weren’t readable — not for me, and definitely not for anyone else.</p>
+  <p>When I first started coding, my scripts were messy. Variables had short names and functions tried to do too many things at once. The programs worked, but they were not readable for me or anyone else.</p>
 
   <div class="soft-box">
-    Clean coding first started making sense to me during my <strong>"Operating Systems"</strong> course.  
-    My professor explained how OS components stay organised — memory, processes, files — and how even the smallest disorder can affect the entire system.  
-    He compared it to real life: how keeping our space tidy makes everything easier and smoother, and how being organised lightens the load on those around us.  
-    It even made me realise how often we turn to our mothers for every tiny problem simply because we misplaced something.  
-    Organisation — in our code or in our lives — is a quiet kind of kindness.
+    Clean coding first started making sense to me during my <strong>Operating Systems</strong> course.  
+    My professor explained how OS components stay organised such as memory, processes, and files, and how even small disorder can affect the whole system.  
+    He connected it to everyday life and how keeping our things in place makes everything smoother and lighter.  
+    It even made me think about how often we rely on our mothers for tiny problems because something is misplaced.  
+    Good organisation in code or life reduces confusion and lightens the load on the people around us.
   </div>
 
-  <p>As I kept learning, I realised that clean code isn’t about perfection or aesthetics; it’s about respect. Respect for your future self, for anyone who reads your work, and for the craft of programming itself. Clean code makes thinking clearer, debugging faster, and problem-solving less chaotic.</p>
+  <p>As I continued learning, I realised that clean code is not about perfection or aesthetics. It is about care for your future self and consideration for anyone who might read your work. Clean code makes thinking clearer, debugging easier, and problem solving more peaceful.</p>
 
-  <p>Some lessons that truly shaped the way I code:</p>
+  <p>Some lessons that shaped the way I write code:</p>
 
   <ul>
-    <li>Using <strong>meaningful names</strong> — choosing clear and intuitive names makes your logic understandable even without comments.</li>
-    <li>Following the <strong>single responsibility idea</strong> — letting every function focus on one task keeps everything organised.</li>
-    <li>Maintaining <strong>readable formatting</strong> — consistent spacing and indentation give your code room to breathe.</li>
-    <li>Practicing <strong>refactoring</strong> — revisiting and improving old code isn’t wasted effort; it’s growth.</li>
+    <li>Using <strong>meaningful names</strong> because clear names make the logic understandable without extra comments.</li>
+    <li>Following the <strong>single responsibility idea</strong> so each function has one clear purpose.</li>
+    <li>Maintaining <strong>readable formatting</strong> with consistent spacing and structure.</li>
+    <li>Practicing <strong>refactoring</strong> so old code becomes cleaner as I grow.</li>
   </ul>
 
-  <p>Because of these principles, coding feels more peaceful to me now. Mistakes are easier to find, collaboration feels smoother, and projects have a rhythm. Clean code isn’t just a technique — it’s a mindset. A quiet, intentional way of building things.</p>
+  <p>Because of these principles, coding feels peaceful and structured. Mistakes are easier to notice and collaboration feels smoother. Clean code is a mindset and a calm way of building things.</p>
 
-  <p>And that’s why I fell in love with clean code: not for the neatness itself, but for the clarity, care, and creativity it brings out in everything I build.</p>
+  <p>That is why I fell in love with clean code, for the clarity and creativity it brings into everything I build.</p>
 
   <a href="techindex.html" class="back-link">&larr; Back to Tech Posts</a>
 
