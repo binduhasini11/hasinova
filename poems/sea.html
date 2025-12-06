@@ -8,21 +8,14 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    /* --- Background (soft beige + subtle grid + noise) --- */
+    /* --- Background: black to deep purple --- */
     body {
       margin: 0;
       font-family: "Inter", Arial, sans-serif;
-      background-color: #eee7dd;
-      background-image:
-        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
-        url("https://i.imgur.com/8fK4h6B.png");
-      background-size: 
-        40px 40px,
-        40px 40px,
-        300px;
-      color: #2a2a2a;
+      background: linear-gradient(to bottom, #000000, #2b004d, #4b0082);
+      color: #e8e8e8;
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     header {
@@ -34,12 +27,13 @@
       margin: 0;
       font-size: 2rem;
       letter-spacing: 1px;
+      color: #eaeaea;
     }
 
     nav a {
       margin: 0 12px;
       text-decoration: none;
-      color: #3d4b40;
+      color: #cfcfcf;
       font-weight: 600;
     }
 
@@ -47,47 +41,48 @@
       text-decoration: underline;
     }
 
-    /* Header image */
+    /* Header image: trimmed to ~3cm */
     .post-header-image img {
       width: 100%;
-      max-height: 350px;
+      height: 140px;
       object-fit: cover;
-      border-bottom: 2px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      opacity: 0.9;
     }
 
-    /* Post container */
+    /* Post container (glass effect) */
     .post-page {
       max-width: 800px;
       margin: 40px auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(4px);
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 25px;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
 
     h2 {
       font-size: 2rem;
       margin-bottom: 5px;
-      color: #3d4b40;
+      color: #ffffff;
     }
 
     .post-date {
-      color: #6b716b;
+      color: #c9c9c9;
       margin-bottom: 20px;
     }
 
-    /* Poem styling */
+    /* Poem box */
     pre.poem-text {
       white-space: pre-wrap;
       font-family: "Georgia", serif;
-      font-size: 1.1rem;
-      color: #2c2c2c;
-      background: rgba(255,255,255,0.4);
-      padding: 20px;
-      border-left: 4px solid #8a9b8c;
-      border-radius: 6px;
+      font-size: 1.15rem;
+      color: #f2f2f2;
+      background: rgba(255,255,255,0.05);
+      padding: 22px;
+      border-radius: 8px;
       line-height: 1.8;
+      border-left: 3px solid rgba(255,255,255,0.15);
     }
 
     .back-link {
@@ -95,7 +90,7 @@
       margin-top: 30px;
       text-decoration: none;
       font-weight: bold;
-      color: #007BFF;
+      color: #c7a0ff;
     }
 
     .back-link:hover {
@@ -105,7 +100,7 @@
     footer {
       text-align: center;
       margin: 50px 0;
-      color: #5d5d5d;
+      color: #b4b4b4;
       font-size: 0.95rem;
     }
   </style>
