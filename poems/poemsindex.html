@@ -1,33 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Poems | Hasinova</title>
+
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #1a1a2e;
+      --bg-mid: #2a2a3f;
+      --muted: #a9a9b0;
+    }
+
+    html, body { height: 100%; margin:0; }
+    body {
+      font-family:"Poppins",system-ui;
+      background:
+        url("https://transparenttextures.com/patterns/asfalt-light.png"),
+        linear-gradient(180deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(180deg, var(--bg-dark), var(--bg-mid));
+      background-size:
+        220px 220px,
+        28px 28px,
+        28px 28px,
+        cover;
+      color: #efefef;
+      min-height:100vh;
+      padding:32px 20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .container { width:100%; max-width:1100px; }
+
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:30px;
+    }
+
+    .logo a{
+      text-decoration:none;
+      color:#fff;
+      font-weight:700;
+      font-size:1.2rem;
+    }
+
+    nav ul {
+      display:flex;
+      list-style:none;
+      margin:0;
+      padding:0;
+      gap:16px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    nav a.active, nav a:hover { color: #fff; text-decoration:underline; }
+
+    h2 {
+      margin-bottom:24px;
+      color:#fff;
+      font-size:1.8rem;
+      letter-spacing:0.5px;
+    }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+      width:100%;
+    }
+
+    .card {
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:14px;
+      overflow:hidden;
+      backdrop-filter: blur(4px);
+      transition: transform .2s ease, box-shadow .2s ease;
+      display:flex;
+      flex-direction:column;
+      min-height:260px;
+    }
+
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 12px 32px rgba(0,0,0,0.5);
+    }
+
+    .thumb {
+      width:100%;
+      height:140px;
+      object-fit:cover;
+    }
+
+    .card-body {
+      padding:15px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+
+    .card h3 {
+      margin:0;
+      color:#fff;
+      font-size:1.1rem;
+    }
+    .card h3 a {
+      color:inherit;
+      text-decoration:none;
+    }
+    .card h3 a:hover { text-decoration:underline; }
+
+    .excerpt {
+      color:var(--muted);
+      font-size:0.92rem;
+      line-height:1.4;
+      flex:1;
+    }
+
+    .meta {
+      display:flex;
+      justify-content:space-between;
+      color:var(--muted);
+      font-size:0.83rem;
+      margin-top:12px;
+    }
+
+    .cat {
+      padding:4px 8px;
+      border-radius:6px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .notice {
+      display:none;
+      padding:20px;
+      color:var(--muted);
+      text-align:center;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1 class="logo">Hasinova</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../tech/techindex.html">Tech</a></li>
-        <li><a href="poemsindex.html" class="active">Poems</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <div class="logo"><a href="../index.html">HASI<span style="opacity:.9">NOVA</span></a></div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../tech/techindex.html">Tech</a></li>
+          <li><a href="poemsindex.html" class="active">Poems</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
     <h2>Poems & Writings</h2>
 
-    <!-- This is where poem posts will load -->
-    <div id="poemPosts"></div>
-  </main>
+    <section id="postsSection">
+      <div id="cards" class="cards"></div>
+      <div id="notice" class="notice">Loading posts…</div>
+    </section>
+  </div>
 
-  <!-- Use only main.js — it already handles category filtering -->
-  <script src="../assets/js/main.js"></script>
+  <script>
+    const postsFile = "../assets/data/posts.json";
+    const cards = document.getElementById("cards");
+    const notice = document.getElementById("notice");
 
+    notice.style.display = "block";
+
+    fetch(postsFile)
+      .then(res => res.json())
+      .then(posts => {
+        notice.style.display = "none";
+
+        const poemPosts = posts.filter(p =>
+          (p.category || "").toLowerCase().includes("poem")
+        );
+
+        if(poemPosts.length === 0){
+          notice.style.display = "block";
+          notice.textContent = "No poem posts yet.";
+          return;
+        }
+
+        poemPosts.sort((a,b) => new Date(b.date) - new Date(a.date));
+
+        poemPosts.forEach(post => {
+          const href = "../" + post.link;
+          const thumb = "../assets/images/" + post.thumbnail;
+
+          let preview = post.excerpt || "";
+          preview = preview.split(" ").slice(0, 22).join(" ") + "...";
+
+          const el = document.createElement("article");
+          el.className = "card";
+
+          el.innerHTML = `
+            <a href="${href}">
+              <img class="thumb" src="${thumb}" alt="${post.title}">
+            </a>
+            <div class="card-body">
+              <h3><a href="${href}">${post.title}</a></h3>
+              <div class="excerpt">${preview}</div>
+              <div class="meta">
+                <div class="cat">${post.category}</div>
+                <div class="date">${new Date(post.date).toLocaleDateString()}</div>
+              </div>
+            </div>
+          `;
+
+          cards.appendChild(el);
+        });
+      })
+      .catch(() => {
+        notice.style.display = "block";
+        notice.textContent = "Couldn't load posts.json.";
+      });
+  </script>
 </body>
 </html>
