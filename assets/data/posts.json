@@ -5,7 +5,7 @@
     "category": "Tech",
     "thumbnail": "ccheader.jpg",
     "excerpt": "How I went from messy scripts to mindful structure — and found that writing clean code is an act of respect, not just habit.",
-    "link": "posts/tech.html"
+    "link": "tech/tech.html"
   },
   {
     "title": "The Sea",
@@ -13,7 +13,7 @@
     "category": "Poem",
     "thumbnail": "seaheader.jpg",
     "excerpt": "No one told the sea it wasn’t good enough. It made its own rules — calm, wild, and untamed.",
-    "link": "posts/sea.html"
+    "link": "poems/sea.html"
   },
   {
     "title": "What My First Project Taught Me",
@@ -21,6 +21,7 @@
     "category": "Experience",
     "thumbnail": "projectheader.jpg",
     "excerpt": "My first-semester Python project wasn’t just code — it was a lesson in patience, independence, and quiet growth.",
-    "link": "posts/groupproject.html"
+    "link": "tech/groupproject.html"
   }
 ]
+
