@@ -7,99 +7,98 @@
 
   <link rel="stylesheet" href="../assets/css/style.css">
 
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
   <style>
   
     body {
       margin: 0;
-      font-family: "Inter", Arial, sans-serif;
-      background: linear-gradient(180deg, #0a0f24, #0e1a3a, #12345c, #0e1a3a, #0a0f24);
-      background-size: 100% 400%;
-      animation: oceanFlow 18s ease-in-out infinite;
-      color: #e9e9e9;
-      line-height: 1.6;
-    }
+      font-family: "Inter", sans-serif;
 
-    @keyframes oceanFlow {
-      0% { background-position: 50% 0%; }
-      50% { background-position: 50% 100%; }
-      100% { background-position: 50% 0%; }
-    }
-
-    /* Soft overlay grid noise */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
+      /* 📜 light academia bg */
       background:
-        url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-      opacity: 0.12;
-      mix-blend-mode: overlay;
+        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(135deg, #f4efe6, #dfe9f3);
+
+      background-size: 28px 28px, 28px 28px, cover;
+      color: #2f2f2f;
+      line-height: 1.7;
     }
 
     header {
       text-align: center;
-      padding: 20px 0;
+      padding: 25px 0;
     }
 
     header h1 {
       margin: 0;
       font-size: 2rem;
       letter-spacing: 1px;
-      color: #ffffff;
+      color: #5a4634;
+      font-family: "Playfair Display", serif;
     }
 
     nav a {
       margin: 0 12px;
       text-decoration: none;
-      color: #d2d8ff;
+      color: #7a6a58;
       font-weight: 600;
     }
-    nav a:hover { color: white; }
 
-    /* Header Image */
+    nav a:hover { color: #3d2f23; }
+
+    /* 🌊 Header Image softer */
     .post-header-image img {
       width: 100%;
       max-height: 240px;
       object-fit: cover;
-      border-bottom: 2px solid rgba(255,255,255,0.1);
-      filter: brightness(0.85) contrast(1.1);
+      filter: brightness(0.9) contrast(0.95) saturate(0.9);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
 
-    /* Poem container */
+    /* 📜 Paper-like poem container */
     .post-page {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 25px 24px 40px;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(8px);
-      border-radius: 14px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      max-width: 780px;
+      margin: 50px auto;
+      padding: 30px 26px 40px;
+      background: #faf7f2;
+      border-radius: 12px;
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.08),
+        0 2px 6px rgba(0,0,0,0.05);
+
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
     h2 {
       font-size: 2rem;
       margin-bottom: 5px;
-      color: #ffffff;
+      color: #3d2f23;
+      font-family: "Playfair Display", serif;
     }
 
     .post-date {
-      color: #c8d0ff;
+      color: #8a7a68;
       margin-bottom: 20px;
       font-size: 0.95rem;
     }
 
-    /* Poem text */
+    /* 📖 Poem text (unchanged content, styled softer) */
     pre.poem-text {
       white-space: pre-wrap;
       font-family: "Georgia", serif;
       font-size: 1.2rem;
-      color: #f2f4ff;
-      background: rgba(255,255,255,0.05);
+      color: #2f2f2f;
+
+      background: #f3efe8;
       padding: 22px;
-      border-left: 4px solid rgba(180, 200, 255, 0.5);
+
+      border-left: 4px solid #b7c7d9;
       border-radius: 6px;
-      line-height: 1.8;
+
+      line-height: 1.9;
     }
 
     .back-link {
@@ -107,16 +106,18 @@
       margin-top: 30px;
       text-decoration: none;
       font-weight: bold;
-      color: #9db2ff;
+      color: #6c7f99;
     }
-    .back-link:hover { color: white; }
+
+    .back-link:hover { color: #3d2f23; }
 
     footer {
       text-align: center;
       margin: 50px 0;
-      color: #b9c0ff;
+      color: #8a7a68;
       font-size: 0.95rem;
     }
+
   </style>
 </head>
 
@@ -133,7 +134,6 @@
     </nav>
   </header>
 
-  <!-- Header Image -->
   <section class="post-header-image">
     <img src="../assets/images/seaheader.jpg" alt="Sea Header">
   </section>
@@ -157,7 +157,7 @@ No one argued with power of that magnitude.
 Land was weak. It let itself be dominated, but the sea never folded.
       </pre>
 
-      <p><strong>– Bindu Hasini</strong></p>
+      
 
       <a href="poemsindex.html" class="back-link">&larr; Back to Poems</a>
     </article>
@@ -170,4 +170,3 @@ Land was weak. It let itself be dominated, but the sea never folded.
 
 </body>
 </html>
-
