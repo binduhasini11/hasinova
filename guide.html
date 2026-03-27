@@ -4,10 +4,179 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guides | Hasinova</title>
+
   <link rel="stylesheet" href="assets/css/style.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+
+      /* 🌈 soft energetic gradient */
+      background: linear-gradient(135deg, #e8fff8, #fff1ec);
+
+      color: #2c2c2c;
+    }
+
+    /* subtle grid */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+
+    /* HEADER */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo a {
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    .hasini { color: #1b5e20; }
+    .nova { color: #ff8a65; }
+
+    .nav-links a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a.active {
+      color: #000;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: #ff8a65;
+    }
+
+    /* SECTION */
+    .posts-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .posts-section h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+
+    .posts-section p {
+      color: #555;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+    }
+
+    /* info box */
+    .guide-intro {
+      background: rgba(255,255,255,0.7);
+      border-radius: 14px;
+      padding: 20px 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+
+    .guide-intro ul {
+      padding-left: 18px;
+      line-height: 1.8;
+    }
+
+    .guide-intro a {
+      color: #ff7043;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* cards */
+    .posts-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .post-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 15px;
+      text-align: left;
+
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+      transition: all 0.3s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    }
+
+    .post-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .post-card h3 {
+      margin: 8px 0;
+      font-size: 1.2rem;
+    }
+
+    .post-card h3 a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .post-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .post-card a {
+      color: #2e7d32;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .post-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin: 50px 0 20px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+  </style>
 </head>
+
 <body>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="logo">
@@ -23,37 +192,56 @@
     </nav>
   </header>
 
-  <!-- GUIDES SECTION -->
+  <!-- SECTION -->
   <section class="posts-section">
-    <h1>Guides & Projects</h1>
-    <p>Welcome to the guides section! Here you can explore my blog, learn how to navigate posts, and check out some of my coding projects online.</p>
-    <ul>
-      <li><strong>Access the blog:</strong> Use the navigation menu at the top to explore Tech articles, Poems, and Guides. Latest posts appear on the <a href="index.html">home page</a>.</li>
-      <li><strong>Explore projects:</strong> Click on the project links below to view live demos and repositories.</li>
-    </ul>
+    <h1>Guides & Projects 🚀</h1>
+    <p>little corner of the internet where i figure things out, build stuff, and share it along the way :)</p>
+
+    <div class="guide-intro">
+      <ul>
+        <li><strong>explore the blog:</strong> use the nav bar to jump into tech, poems, or guides. latest posts live on the <a href="index.html">home page</a>.</li>
+        <li><strong>check out projects:</strong> below are things i’ve built — messy, evolving, and very real.</li>
+      </ul>
+    </div>
 
     <div class="posts-container">
-      <!-- Example guide/project -->
+
       <div class="post-card">
         <img src="assets/images/sample-guide.jpg" alt="Student Task Manager Project">
-        <h3><a href="https://binduhasini11.github.io/Student-Task-Manager/" target="_blank">Student Task Manager Project</a></h3>
-        <p>A web app to manage your daily tasks, built with HTML, CSS, and JavaScript.</p>
-        <p><a href="https://binduhasini11.github.io/Student-Task-Manager/" target="_blank">View project online</a></p>
+        <h3>
+          <a href="https://binduhasini11.github.io/Student-Task-Manager/" target="_blank">
+            Student Task Manager
+          </a>
+        </h3>
+        <p>a simple web app to organize your day — built with html, css, and js.</p>
+        <p>
+          <a href="https://binduhasini11.github.io/Student-Task-Manager/" target="_blank">
+            view project →
+          </a>
+        </p>
       </div>
 
-      <!-- You can add more projects here -->
       <div class="post-card">
-        <img src="assets/images/sample-guide2.jpg" alt="Another Project">
-        <h3><a href="https://github.com/binduhasini11" target="_blank">Other Projects</a></h3>
-        <p>Explore more of my work on GitHub including web apps, scripts, and creative coding projects.</p>
-        <p><a href="https://github.com/binduhasini11" target="_blank">Visit GitHub</a></p>
+        <img src="assets/images/sample2.jpg" alt="Other Projects">
+        <h3>
+          <a href="https://github.com/binduhasini11" target="_blank">
+            more projects on github
+          </a>
+        </h3>
+        <p>random builds, experiments, and things i tried figuring out at 2am.</p>
+        <p>
+          <a href="https://github.com/binduhasini11" target="_blank">
+            explore →
+          </a>
+        </p>
       </div>
+
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p>© 2025 <strong>Hasinova</strong> — Where Code meets Poetry | Crafted by Bindu Hasini</p>
+    <p>© 2025 <strong>Hasinova</strong> — built with curiosity & a little chaos ✨</p>
   </footer>
+
 </body>
 </html>
