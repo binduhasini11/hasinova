@@ -10,30 +10,36 @@
 
   <style>
     :root {
-      --bg-dark: #1a1a2e;
-      --bg-mid: #2a2a3f;
-      --muted: #a9a9b0;
+      --bg-light: #eef7ff;
+      --bg-mid: #e8f3f1;
+      --bg-warm: #fdf6f0;
+
+      --text-main: #2f2f2f;
+      --muted: #6b7280;
+      --accent: #6c8ca3;
     }
 
     html, body { height: 100%; margin:0; }
+
     body {
       font-family:"Poppins",system-ui;
+
+      /* 🌊 soft poetic gradient + grid */
       background:
-        url("https://transparenttextures.com/patterns/asfalt-light.png"),
-        linear-gradient(180deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(180deg, var(--bg-dark), var(--bg-mid));
-      background-size:
-        220px 220px,
-        28px 28px,
-        28px 28px,
-        cover;
-      color: #efefef;
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(180deg, var(--bg-light), var(--bg-mid), var(--bg-warm));
+
+      background-size: 28px 28px, 28px 28px, cover;
+
+      color: var(--text-main);
       min-height:100vh;
       padding:32px 20px;
+
       display:flex;
       flex-direction:column;
       align-items:center;
+      overflow-x:hidden;
     }
 
     .container { width:100%; max-width:1100px; }
@@ -47,7 +53,7 @@
 
     .logo a{
       text-decoration:none;
-      color:#fff;
+      color:#2f2f2f;
       font-weight:700;
       font-size:1.2rem;
     }
@@ -66,47 +72,53 @@
       font-weight:600;
     }
 
-    nav a.active, nav a:hover { color: #fff; text-decoration:underline; }
+    nav a.active, nav a:hover {
+      color: #2f2f2f;
+    }
 
     h2 {
       margin-bottom:24px;
-      color:#fff;
-      font-size:1.8rem;
-      letter-spacing:0.5px;
+      font-size:1.9rem;
+      font-weight:600;
     }
 
     .cards {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
+      gap:24px;
       width:100%;
     }
 
+    /* ✨ card redesign */
     .card {
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.05);
-      border-radius:14px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius:16px;
       overflow:hidden;
-      backdrop-filter: blur(4px);
-      transition: transform .2s ease, box-shadow .2s ease;
+
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+      transition: transform .25s ease, box-shadow .25s ease;
+
       display:flex;
       flex-direction:column;
       min-height:260px;
     }
 
     .card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 12px 32px rgba(0,0,0,0.5);
+      transform:translateY(-8px);
+      box-shadow:0 18px 40px rgba(0,0,0,0.12);
     }
 
     .thumb {
       width:100%;
-      height:140px;
+      height:150px;
       object-fit:cover;
+      filter: brightness(0.95) saturate(0.95);
     }
 
     .card-body {
-      padding:15px;
+      padding:16px;
       display:flex;
       flex-direction:column;
       gap:10px;
@@ -115,35 +127,43 @@
 
     .card h3 {
       margin:0;
-      color:#fff;
       font-size:1.1rem;
     }
+
     .card h3 a {
-      color:inherit;
+      color: var(--text-main);
       text-decoration:none;
     }
+
     .card h3 a:hover { text-decoration:underline; }
 
     .excerpt {
       color:var(--muted);
       font-size:0.92rem;
-      line-height:1.4;
+      line-height:1.5;
       flex:1;
     }
 
     .meta {
       display:flex;
       justify-content:space-between;
-      color:var(--muted);
-      font-size:0.83rem;
+      align-items:center;
+      font-size:0.8rem;
       margin-top:12px;
     }
 
     .cat {
-      padding:4px 8px;
-      border-radius:6px;
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
+      padding:4px 10px;
+      border-radius:20px;
+
+      background: rgba(108,140,163,0.12);
+      color: #4a6a80;
+
+      font-weight:500;
+    }
+
+    .date {
+      color: var(--muted);
     }
 
     .notice {
@@ -152,12 +172,36 @@
       color:var(--muted);
       text-align:center;
     }
+
+    /* 🫧 floating bubbles */
+    .bubble {
+      position: fixed;
+      bottom: -40px;
+      width: 10px;
+      height: 10px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      animation: floatUp linear infinite;
+      pointer-events:none;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
-      <div class="logo"><a href="../index.html">HASI<span style="opacity:.9">NOVA</span></a></div>
+      <div class="logo">
+        <a href="../index.html">HASI<span style="opacity:.9">NOVA</span></a>
+      </div>
+
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -169,7 +213,7 @@
       </nav>
     </header>
 
-    <h2>Poems & Writings</h2>
+    <h2>Poems & Writings 🌊</h2>
 
     <section id="postsSection">
       <div id="cards" class="cards"></div>
@@ -177,6 +221,19 @@
     </section>
   </div>
 
+  <!-- 🫧 bubbles -->
+  <script>
+    for (let i = 0; i < 15; i++) {
+      const b = document.createElement("div");
+      b.className = "bubble";
+      b.style.left = Math.random() * 100 + "vw";
+      b.style.animationDuration = (6 + Math.random() * 5) + "s";
+      b.style.opacity = Math.random();
+      document.body.appendChild(b);
+    }
+  </script>
+
+  <!-- existing logic (UNCHANGED) -->
   <script>
     const postsFile = "../assets/data/posts.json";
     const cards = document.getElementById("cards");
@@ -233,5 +290,6 @@
         notice.textContent = "Couldn't load posts.json.";
       });
   </script>
+
 </body>
 </html>
