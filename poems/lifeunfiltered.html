@@ -4,22 +4,23 @@
 <meta charset="UTF-8">
 <title>Why you should hehehe more in life</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
   body {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
-    background: linear-gradient(135deg, #fdf6f0, #f3fff7);
+    background: #eafaf1; /* pastel green */
+    color: #000;
     overflow-x: hidden;
   }
 
-  /* 🌿 Floating particles */
+  /* 🌿 floating particles */
   .particle {
     position: fixed;
     border-radius: 50%;
-    opacity: 0.4;
+    opacity: 0.3;
     pointer-events: none;
     animation: float 12s infinite ease-in-out;
   }
@@ -38,54 +39,66 @@
     z-index: 2;
   }
 
+  /* 🌿 playful curved title */
   h1 {
-    font-family: "Playfair Display", serif;
+    font-family: "Fredoka", sans-serif;
     font-size: 2.8rem;
-    margin-bottom: 40px;
-    color: #2e5e4e;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1f5c3f; /* dark green */
+
+    /* subtle curve illusion */
+    transform: rotate(-1deg);
+    letter-spacing: 1px;
   }
 
-  /* 🫧 Pop-out poem box */
+  h1 span:nth-child(odd) {
+    display: inline-block;
+    transform: translateY(-4px);
+  }
+
+  h1 span:nth-child(even) {
+    display: inline-block;
+    transform: translateY(4px);
+  }
+
+  /* 🫧 poem box */
   .poem-box {
-    background: rgba(255, 255, 255, 0.6);
+    background: #f2f2f2; /* light grey */
     border-radius: 20px;
     padding: 40px 30px;
-    backdrop-filter: blur(10px);
-    box-shadow: 
-      0 10px 30px rgba(0,0,0,0.08),
-      0 0 40px rgba(255, 200, 200, 0.2);
-    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   }
 
   p {
     font-size: 1.15rem;
     line-height: 2;
     margin-bottom: 35px;
-    color: #3f3f3f;
+    color: #000;
   }
 
   .divider {
     text-align: center;
     font-size: 1.2rem;
     margin: 30px 0 40px;
-    color: #ff9e9e;
+    color: #ff8c8c;
     letter-spacing: 2px;
   }
 
   .highlight {
-    background: #ffe4dc;
+    background: #ffdcd2;
     padding: 2px 6px;
     border-radius: 6px;
   }
 
   .soft {
-    color: #6b8f7a;
+    color: #4f7f68;
   }
 
   .ending {
     margin-top: 40px;
     font-size: 1.2rem;
-    color: #2e5e4e;
+    color: #1f5c3f;
   }
 
 </style>
@@ -95,7 +108,7 @@
 
 <!-- 🌿 particles -->
 <script>
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 18; i++) {
     const p = document.createElement("div");
     p.classList.add("particle");
 
@@ -103,7 +116,7 @@
     p.style.width = size + "px";
     p.style.height = size + "px";
 
-    p.style.background = Math.random() > 0.5 ? "#ffd6cc" : "#c8f2d4";
+    p.style.background = Math.random() > 0.5 ? "#ffcfc2" : "#bdeacb";
 
     p.style.top = Math.random() * 100 + "vh";
     p.style.left = Math.random() * 100 + "vw";
@@ -116,7 +129,9 @@
 
 <div class="container">
 
-  <h1>Why you should hehehe more in life</h1>
+  <h1>
+    <span>Why</span> <span>you</span> <span>should</span> <span>hehehe</span> <span>more</span> <span>in</span> <span>life</span>
+  </h1>
 
   <div class="poem-box">
 
@@ -124,6 +139,7 @@
       You don’t always have to be composed, curated, or quietly impressive. Sometimes life isn’t asking for your “best version”; it just wants you, <span class="highlight">unfiltered</span> … and a little unhinged :)
     </p>
 
+   
 
     <p>
       We wear so many versions of ourselves like layers, like armor, like performance reviews waiting to happen… but not every moment is an audition. Some are just… pauses. Soft glitches in the system where you’re allowed to drop everything — the act, the expectations, the need to make sense…
@@ -136,11 +152,10 @@
     </p>
 
     
-
     <p class="ending">
       So yeah, maybe take life a little less seriously… not because it doesn’t matter, but because you do… beyond the roles, beyond the mask, beyond whatever you think you’re supposed to be.
     </p>
-<div class="divider">🍑🌿🍑🍑🌿🍑🍑🌿🍑🍑🌿🍑🍑🌿🍑🍑🌿🍑🍑🌿🍑🍑🌿🍑🍑🌿🍑🍑🌿🍑</div>
+<div class="divider">🍑🍑🍑🍑🍑🍑🍑🍑✿🍑🍑🍑🍑🍑🍑🍑🍑</div>
   </div>
 
 </div>
