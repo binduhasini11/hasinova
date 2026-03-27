@@ -10,13 +10,13 @@
 
   <style>
     :root {
-      --bg-light: #eef7ff;
-      --bg-mid: #e8f3f1;
-      --bg-warm: #fdf6f0;
+      --bg-light: #f5efff;   /* lavender */
+      --bg-mid: #efe7fb;     /* lilac */
+      --bg-warm: #fff3f8;    /* soft pink */
 
-      --text-main: #2f2f2f;
-      --muted: #6b7280;
-      --accent: #6c8ca3;
+      --text-main: #2d2d2d;
+      --muted: #7a6f8a;
+      --accent: #a084ca;
     }
 
     html, body { height: 100%; margin:0; }
@@ -24,7 +24,6 @@
     body {
       font-family:"Poppins",system-ui;
 
-      /* 🌊 soft poetic gradient + grid */
       background:
         linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
@@ -53,7 +52,7 @@
 
     .logo a{
       text-decoration:none;
-      color:#2f2f2f;
+      color:#2d2d2d;
       font-weight:700;
       font-size:1.2rem;
     }
@@ -73,7 +72,7 @@
     }
 
     nav a.active, nav a:hover {
-      color: #2f2f2f;
+      color: #2d2d2d;
     }
 
     h2 {
@@ -89,7 +88,7 @@
       width:100%;
     }
 
-    /* ✨ card redesign */
+    /* 💜 cards */
     .card {
       background: rgba(255,255,255,0.75);
       border: 1px solid rgba(0,0,0,0.05);
@@ -107,7 +106,7 @@
 
     .card:hover {
       transform:translateY(-8px);
-      box-shadow:0 18px 40px rgba(0,0,0,0.12);
+      box-shadow:0 18px 40px rgba(160,132,202,0.25);
     }
 
     .thumb {
@@ -156,8 +155,8 @@
       padding:4px 10px;
       border-radius:20px;
 
-      background: rgba(108,140,163,0.12);
-      color: #4a6a80;
+      background: rgba(160,132,202,0.15);
+      color: #6d5ba6;
 
       font-weight:500;
     }
@@ -173,7 +172,7 @@
       text-align:center;
     }
 
-    /* 🫧 floating bubbles */
+    /* 🫧 bubbles */
     .bubble {
       position: fixed;
       bottom: -40px;
@@ -199,7 +198,7 @@
   <div class="container">
     <header>
       <div class="logo">
-        <a href="../index.html">HASI<span style="opacity:.9">NOVA</span></a>
+        <a href="../index.html">HASI<span style="opacity:.9">NOVA</span> 💜</a>
       </div>
 
       <nav>
@@ -213,7 +212,7 @@
       </nav>
     </header>
 
-    <h2>Poems & Writings 🌊</h2>
+    <h2>Poems & Writings ✨</h2>
 
     <section id="postsSection">
       <div id="cards" class="cards"></div>
@@ -233,7 +232,7 @@
     }
   </script>
 
-  <!-- existing logic (UNCHANGED) -->
+  <!-- existing logic (unchanged) -->
   <script>
     const postsFile = "../assets/data/posts.json";
     const cards = document.getElementById("cards");
