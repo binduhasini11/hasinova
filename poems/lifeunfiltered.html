@@ -11,7 +11,14 @@
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
-    background: #eafaf1; /* pastel green */
+
+    /* 🌿 beige + sage green with subtle grid */
+    background:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(135deg, #f5f3ee, #dce8e1);
+    background-size: 28px 28px, 28px 28px, cover;
+
     color: #000;
     overflow-x: hidden;
   }
@@ -20,7 +27,7 @@
   .particle {
     position: fixed;
     border-radius: 50%;
-    opacity: 0.3;
+    opacity: 0.25;
     pointer-events: none;
     animation: float 12s infinite ease-in-out;
   }
@@ -45,9 +52,8 @@
     font-size: 2.8rem;
     text-align: center;
     margin-bottom: 50px;
-    color: #1f5c3f; /* dark green */
+    color: #2f5d50;
 
-    /* subtle curve illusion */
     transform: rotate(-1deg);
     letter-spacing: 1px;
   }
@@ -62,26 +68,28 @@
     transform: translateY(4px);
   }
 
-  /* 🫧 poem box */
+  /* 🫧 poem box with stronger shadow */
   .poem-box {
-    background: #f2f2f2; /* light grey */
+    background: #f2f2f2;
     border-radius: 20px;
     padding: 40px 30px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    box-shadow:
+      0 12px 35px rgba(0,0,0,0.12),
+      0 4px 10px rgba(0,0,0,0.06);
   }
 
   p {
     font-size: 1.15rem;
     line-height: 2;
     margin-bottom: 35px;
-    color: #000;
+    color: #000; /* ⚫ force uniform black */
   }
 
   .divider {
     text-align: center;
     font-size: 1.2rem;
     margin: 30px 0 40px;
-    color: #ff8c8c;
+    color: #e48c7d;
     letter-spacing: 2px;
   }
 
@@ -91,14 +99,10 @@
     border-radius: 6px;
   }
 
-  .soft {
-    color: #4f7f68;
-  }
-
   .ending {
     margin-top: 40px;
     font-size: 1.2rem;
-    color: #1f5c3f;
+    color: #000;
   }
 
 </style>
@@ -116,7 +120,7 @@
     p.style.width = size + "px";
     p.style.height = size + "px";
 
-    p.style.background = Math.random() > 0.5 ? "#ffcfc2" : "#bdeacb";
+    p.style.background = Math.random() > 0.5 ? "#eecfc6" : "#b7d9c6";
 
     p.style.top = Math.random() * 100 + "vh";
     p.style.left = Math.random() * 100 + "vw";
@@ -139,23 +143,24 @@
       You don’t always have to be composed, curated, or quietly impressive. Sometimes life isn’t asking for your “best version”; it just wants you, <span class="highlight">unfiltered</span> … and a little unhinged :)
     </p>
 
-   
+    
 
     <p>
-      We wear so many versions of ourselves like layers, like armor, like performance reviews waiting to happen… but not every moment is an audition. Some are just… pauses. Soft glitches in the system where you’re allowed to drop everything — the act, the expectations, the need to make sense…
+      We wear so many versions of ourselves like layers, like armor, like performance reviews waiting to happen… but not every moment is an audition. Some are just… pauses. Soft glitches in the system where you’re allowed to drop everything.. the act, the expectations, the need to make sense…
     </p>
 
     
 
-    <p class="soft">
+    <p>
       Because weirdly enough, it’s never the big, polished highlights that stay. It’s the messy laughter that makes no sense later. It’s the random joy that had no reason to exist. It’s the tiny “haha hehe” moments that slip through all your defenses and remind you that you’re not here to perform life, you’re here to feel it.
     </p>
 
     
+
     <p class="ending">
       So yeah, maybe take life a little less seriously… not because it doesn’t matter, but because you do… beyond the roles, beyond the mask, beyond whatever you think you’re supposed to be.
     </p>
-<div class="divider">🍑🍑🍑🍑🍑🍑🍑🍑✿🍑🍑🍑🍑🍑🍑🍑🍑</div>
+<div class="divider">🍑🌿🌿🍑🍑🍑🍑🍑🍑🍑🍑🍑🍑🍑🍑🌿🌿🍑</div>
   </div>
 
 </div>
