@@ -6,7 +6,6 @@
   <title>Guides | Hasinova</title>
 
   <link rel="stylesheet" href="assets/css/style.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -14,14 +13,10 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-
-      /* 🌈 soft energetic gradient */
       background: linear-gradient(135deg, #e8fff8, #fff1ec);
-
       color: #2c2c2c;
     }
 
-    /* subtle grid */
     body::before {
       content: "";
       position: fixed;
@@ -33,7 +28,6 @@
       pointer-events: none;
     }
 
-    /* HEADER */
     .site-header {
       display: flex;
       justify-content: space-between;
@@ -57,7 +51,6 @@
       text-decoration: none;
       color: #444;
       font-weight: 500;
-      position: relative;
     }
 
     .nav-links a.active {
@@ -65,11 +58,8 @@
       font-weight: 700;
     }
 
-    .nav-links a:hover {
-      color: #ff8a65;
-    }
+    .nav-links a:hover { color: #ff8a65; }
 
-    /* SECTION */
     .posts-section {
       max-width: 1100px;
       margin: 60px auto;
@@ -82,7 +72,7 @@
       margin-bottom: 10px;
     }
 
-    .posts-section p {
+    .posts-section > p {
       color: #555;
       font-size: 1.05rem;
       max-width: 700px;
@@ -90,7 +80,6 @@
       line-height: 1.7;
     }
 
-    /* info box */
     .guide-intro {
       background: rgba(255,255,255,0.7);
       border-radius: 14px;
@@ -111,7 +100,27 @@
       font-weight: 500;
     }
 
-    /* cards */
+    /* section labels */
+    .section-label {
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: left;
+      margin: 40px 0 16px;
+      color: #222;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #ff8a65, transparent);
+      border-radius: 2px;
+    }
+
+    /* cards grid */
     .posts-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -123,9 +132,7 @@
       border-radius: 16px;
       padding: 15px;
       text-align: left;
-
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-
       transition: all 0.3s ease;
     }
 
@@ -138,6 +145,25 @@
       width: 100%;
       border-radius: 12px;
       margin-bottom: 12px;
+    }
+
+    /* poetry card: no image, decorative bg instead */
+    .post-card.poetry-card {
+      background: linear-gradient(135deg, #fff0f8, #f8f0ff);
+      border: 1.5px solid #e8c8f0;
+    }
+
+    .poetry-card-banner {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      height: 130px;
+      background: linear-gradient(120deg, #d8a8e8, #f0a0c8, #c8a0e8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      letter-spacing: 6px;
     }
 
     .post-card h3 {
@@ -161,49 +187,54 @@
       text-decoration: none;
     }
 
-    .post-card a:hover {
-      text-decoration: underline;
-    }
+    .post-card a:hover { text-decoration: underline; }
 
-    /* 🌷 NEW: POETRY + CONTACT BOX */
-    .guide-extra-box {
-      background: rgba(255,255,255,0.75);
-      border-radius: 16px;
-      padding: 30px 25px;
+    .poetry-card a { color: #8b3a9e; }
+
+    /* contact strip */
+    .contact-strip {
       margin-top: 50px;
-      text-align: center;
-
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.7);
+      border-radius: 14px;
+      padding: 22px 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      text-align: left;
     }
 
-    .guide-extra-box h2 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-    }
-
-    .guide-extra-box p {
-      font-size: 0.95rem;
+    .contact-strip p {
+      margin: 0;
+      font-size: 0.97rem;
       color: #444;
-      line-height: 1.7;
     }
 
-    .guide-extra-box a {
-      display: inline-block;
-      margin-top: 10px;
+    .contact-strip strong { color: #222; }
+
+    .contact-strip a {
       color: #ff7043;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
     }
 
-    .guide-extra-box a:hover {
-      text-decoration: underline;
+    .contact-strip a:hover { text-decoration: underline; }
+
+    .contact-badge {
+      background: linear-gradient(135deg, #ff8a65, #ff5722);
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s;
     }
 
-    .contact-line {
-      margin-top: 18px;
-      font-size: 0.9rem;
-      color: #666;
-    }
+    .contact-badge:hover { opacity: 0.85; text-decoration: none; color: #fff; }
 
     footer {
       text-align: center;
@@ -228,6 +259,7 @@
       <a href="tech/techindex.html">Tech</a>
       <a href="guide.html" class="active">Guides</a>
       <a href="poems/poemsindex.html">Poems</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -239,10 +271,13 @@
     <div class="guide-intro">
       <ul>
         <li><strong>explore the blog:</strong> use the nav bar to jump into tech, poems, or guides. latest posts live on the <a href="index.html">home page</a>.</li>
-        <li><strong>check out projects:</strong> below are things i’ve built — messy, evolving, and very real.</li>
+        <li><strong>check out projects:</strong> below are things i've built — messy, evolving, and very real.</li>
+        <li><strong>read my poetry:</strong> i also write on <a href="https://allpoetry.com/Bubblesss" target="_blank">AllPoetry</a> — come say hi ✨</li>
       </ul>
     </div>
 
+    <!-- Projects -->
+    <div class="section-label">🛠️ Projects</div>
     <div class="posts-container">
 
       <div class="post-card">
@@ -277,26 +312,34 @@
 
     </div>
 
-    <!-- 🌙 POETRY + CONTACT -->
-    <div class="guide-extra-box">
+    <!-- Poetry -->
+    <div class="section-label">🌸 Poetry</div>
+    <div class="posts-container">
 
-      <h2>wanna read more of my words...?</h2>
+      <div class="post-card poetry-card">
+        <div class="poetry-card-banner">✦ ☽ ✦</div>
+        <h3>
+          <a href="https://allpoetry.com/Bubblesss" target="_blank">
+            AllPoetry — Bubblesss
+          </a>
+        </h3>
+        <p>where my words live between the lines — verses on feelings, nights, and everything in between.</p>
+        <p>
+          <a href="https://allpoetry.com/Bubblesss" target="_blank">
+            read my poems →
+          </a>
+        </p>
+      </div>
 
-      <p>
-        if something here felt a little too real or stayed longer than expected...  
-        there’s more of that quiet chaos waiting for you 🌙
-      </p>
+    </div>
 
-      <a href="https://allpoetry.com/Bubblesss" target="_blank">
-        drift into my poetry →
-      </a>
-
-      <p class="contact-line">
-        or just exist in my inbox...  
-        <br>
-        <strong>binduhasini11@gmail.com</strong>
-      </p>
-
+    <!-- Contact strip -->
+    <div class="contact-strip">
+      <div>
+        <p><strong>want to say hi or collaborate?</strong></p>
+        <p>drop me a message at <a href="mailto:binduhasini11@gmail.com">binduhasini11@gmail.com</a> — i love hearing from people 💌</p>
+      </div>
+      <a class="contact-badge" href="mailto:binduhasini11@gmail.com">✉ get in touch</a>
     </div>
 
   </section>
