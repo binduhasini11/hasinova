@@ -4,40 +4,147 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Hasinova</title>
+
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    .about-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    :root {
+      --bg1: #f7f2ff;
+      --bg2: #f3ecff;
+      --accent: #a084ca;
+      --text: #2d2d2d;
+      --muted: #7a6f8a;
     }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      background-size: 28px 28px, 28px 28px, cover;
+      color: var(--text);
+    }
+
+    /* ✨ MAIN WRAP */
+    .about {
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
     .about-container {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 50px;
       flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
+      max-width: 1100px;
+
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 40px;
+
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     }
-    .about-text { max-width: 600px; }
+
+    /* 🌙 IMAGE */
+    .about-image {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+
+      border: 5px solid rgba(255,255,255,0.8);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+      transition: transform 0.3s ease;
+    }
+
+    .about-image:hover {
+      transform: scale(1.05);
+    }
+
+    /* ✍️ TEXT */
+    .about-text {
+      max-width: 600px;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    p {
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    /* 💡 highlight box */
     .about-highlight {
-      background-color: #f0f0f0;
-      padding: 15px 20px;
+      background: rgba(160,132,202,0.1);
+      padding: 18px 22px;
       margin-top: 20px;
-      border-radius: 10px;
+      border-radius: 14px;
     }
+
+    /* 🧩 INFO CHIPS */
+    .info-chips {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chip {
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(0,0,0,0.05);
+
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .chip strong {
+      color: var(--accent);
+      margin-right: 5px;
+    }
+
+    /* ✨ FLOATING PARTICLES */
+    .particle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: rgba(160,132,202,0.4);
+      border-radius: 50%;
+      animation: float 12s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); opacity:1; }
+      to { transform: translateY(-10vh); opacity:0; }
+    }
+
     @media (max-width: 768px) {
-      .about-container { flex-direction: column; text-align: center; }
-      .about-text { margin-top: 20px; }
-      .about-image { width: 150px; height: 150px; }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="logo">
@@ -53,11 +160,15 @@
     </nav>
   </header>
 
-   <section class="about">
+  <!-- ABOUT -->
+  <section class="about">
     <div class="about-container">
+
       <img src="assets/images/me.jpg" alt="Bindu Hasini" class="about-image">
+
       <div class="about-text">
         <h1>About <span>Hasinova</span></h1>
+
         <p>
           Hi, I’m <strong>Bindu Hasini</strong> — the writer, developer, and dreamer behind <strong>Hasinova</strong>.  
           This space was born out of my love for both structured logic and untamed creativity.  
@@ -73,19 +184,38 @@
           I like to think of it as a constellation of thoughts — each post a tiny light in the digital night.
         </p>
 
-        <div class="about-highlight">
-          <p>✨ <strong>In short:</strong> Hasinova is my digital notebook — documenting how code, stories, and poetry
-          intertwine to make sense of a chaotic, beautiful world.</p>
+        <!-- 💡 CHIPS INSTEAD OF BORING TEXT -->
+        <div class="info-chips">
+          <div class="chip"><strong>Education:</strong> BTech CSE</div>
+          <div class="chip"><strong>Focus:</strong> Web & App Development</div>
+          <div class="chip"><strong>Interest:</strong> Quantum Computing</div>
+          <div class="chip"><strong>Also into:</strong> Creative Coding</div>
         </div>
+
+        <div class="about-highlight">
+          ✨ <strong>In short:</strong> Hasinova is my digital notebook — documenting how code, stories, and poetry
+          intertwine to make sense of a chaotic, beautiful world.
+        </div>
+
       </div>
     </div>
   </section>
+
+  
+  <script>
+    for (let i = 0; i < 12; i++) {
+      const p = document.createElement("div");
+      p.className = "particle";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.animationDuration = (8 + Math.random() * 6) + "s";
+      document.body.appendChild(p);
+    }
+  </script>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2025 <strong>Hasinova</strong> — Where Code meets Poetry | Crafted by Bindu Hasini</p>
   </footer>
+
 </body>
 </html>
-
-
