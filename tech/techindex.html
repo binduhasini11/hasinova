@@ -10,31 +10,35 @@
 
   <style>
     :root {
-      --bg-dark:#1a1a1d;
-      --bg-mid:#2a2a2e;
-      --muted:#a9a9b0;
+      --bg-light: #f6f2ff;   /* lavender */
+      --bg-mid: #efe9fb;     /* lilac */
+      --bg-warm: #fff6fb;    /* pink tint */
+
+      --text-main: #2d2d2d;
+      --muted: #7a6f8a;
+      --accent: #a084ca;
     }
 
-    /* Background: grid + noise */
     html,body { height:100%; margin:0; }
+
     body {
       font-family:"Poppins",system-ui;
+
       background:
-        url("https://transparenttextures.com/patterns/asfalt-light.png"),
-        linear-gradient(180deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(180deg, var(--bg-dark), var(--bg-mid));
-      background-size:
-        220px 220px,
-        28px 28px,
-        28px 28px,
-        cover;
-      color:#efefef;
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(180deg, var(--bg-light), var(--bg-mid), var(--bg-warm));
+
+      background-size: 28px 28px, 28px 28px, cover;
+
+      color:var(--text-main);
       min-height:100vh;
       padding:32px 20px;
+
       display:flex;
       flex-direction:column;
       align-items:center;
+      overflow-x:hidden;
     }
 
     .container { width:100%; max-width:1100px; }
@@ -48,64 +52,77 @@
 
     .logo a{
       text-decoration:none;
-      color:#fff;
+      color:#2d2d2d;
       font-weight:700;
       font-size:1.2rem;
     }
+
     nav a{
       color:var(--muted);
       margin-left:16px;
       text-decoration:none;
       font-weight:600;
     }
-    nav a:hover { color:#fff; }
 
-    /* Title area */
+    nav a:hover,
+    nav a.active {
+      color:#2d2d2d;
+    }
+
+    /* 💻 title */
     .title-wrap {
       margin-bottom:26px;
     }
+
     h1 {
       margin:0;
-      font-size:1.7rem;
-      color:#fff;
+      font-size:1.8rem;
+      font-weight:600;
     }
+
     .subtitle {
-      margin:5px 0 0;
+      margin:6px 0 0;
       color:var(--muted);
       font-size:0.95rem;
     }
 
-    /* Posts Grid */
+    /* ✨ cards grid */
     .cards {
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-      gap:20px;
+      gap:24px;
+      width:100%;
     }
 
     .card {
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.05);
-      border-radius:14px;
+      background: rgba(255,255,255,0.75);
+      border:1px solid rgba(0,0,0,0.05);
+      border-radius:16px;
       overflow:hidden;
-      backdrop-filter: blur(4px);
-      transition:transform .2s ease, box-shadow .2s ease;
+
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+      transition: transform .25s ease, box-shadow .25s ease;
+
       display:flex;
       flex-direction:column;
       min-height:260px;
     }
+
     .card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 12px 32px rgba(0,0,0,0.5);
+      transform:translateY(-8px);
+      box-shadow:0 18px 40px rgba(160,132,202,0.25);
     }
 
     .thumb {
       width:100%;
-      height:135px;
+      height:140px;
       object-fit:cover;
+      filter: brightness(0.95);
     }
 
     .card-body {
-      padding:15px;
+      padding:16px;
       display:flex;
       flex-direction:column;
       gap:10px;
@@ -114,35 +131,45 @@
 
     .card h3 {
       margin:0;
-      color:#fff;
       font-size:1.1rem;
     }
+
     .card h3 a {
-      color:inherit;
+      color:var(--text-main);
       text-decoration:none;
     }
-    .card h3 a:hover { text-decoration:underline; }
+
+    .card h3 a:hover {
+      text-decoration:underline;
+    }
 
     .excerpt {
       color:var(--muted);
       font-size:0.92rem;
-      line-height:1.4;
+      line-height:1.5;
       flex:1;
     }
 
     .meta {
       display:flex;
       justify-content:space-between;
-      color:var(--muted);
-      font-size:0.83rem;
+      align-items:center;
+      font-size:0.8rem;
       margin-top:12px;
     }
 
     .cat {
-      padding:4px 8px;
-      border-radius:6px;
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
+      padding:4px 10px;
+      border-radius:20px;
+
+      background: rgba(160,132,202,0.15);
+      color:#6d5ba6;
+
+      font-weight:500;
+    }
+
+    .date {
+      color:var(--muted);
     }
 
     .notice {
@@ -151,16 +178,36 @@
       color:var(--muted);
       text-align:center;
     }
+
+    /* ✨ subtle floating particles (tech vibe) */
+    .particle {
+      position:fixed;
+      width:6px;
+      height:6px;
+      background: rgba(160,132,202,0.4);
+      border-radius:50%;
+      animation: float 10s linear infinite;
+      pointer-events:none;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); opacity:1; }
+      to { transform: translateY(-10vh); opacity:0; }
+    }
+
   </style>
 </head>
 
 <body>
   <div class="container">
     <header>
-      <div class="logo"><a href="../index.html">HASI<span style="opacity:.9">NOVA</span></a></div>
+      <div class="logo">
+        <a href="../index.html">HASI<span style="opacity:.9">NOVA</span> 💻💜</a>
+      </div>
+
       <nav>
         <a href="../index.html">Home</a>
-        <a href="techindex.html" style="color:#fff;">Tech</a>
+        <a href="techindex.html" class="active">Tech</a>
         <a href="../poems/poemsindex.html">Poems</a>
         <a href="../about.html">About</a>
         <a href="../contact.html">Contact</a>
@@ -168,8 +215,8 @@
     </header>
 
     <div class="title-wrap">
-      <h1>Tech</h1>
-      <p class="subtitle">notes, experiments and my progress in coding</p>
+      <h1>Tech & Builds ✨</h1>
+      <p class="subtitle">notes, experiments, and my coding journey</p>
     </div>
 
     <section id="postsSection">
@@ -178,6 +225,19 @@
     </section>
   </div>
 
+  <!-- ✨ floating particles -->
+  <script>
+    for (let i = 0; i < 12; i++) {
+      const p = document.createElement("div");
+      p.className = "particle";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.animationDuration = (8 + Math.random() * 6) + "s";
+      p.style.opacity = Math.random();
+      document.body.appendChild(p);
+    }
+  </script>
+
+  <!-- same logic -->
   <script>
     const postsFile = "../assets/data/posts.json";
     const cards = document.getElementById("cards");
@@ -209,7 +269,6 @@
           const href = "../" + post.link;
           const thumb = "../assets/images/" + post.thumbnail;
 
-          // preview snippet (first 22 words)
           let preview = post.excerpt || "";
           preview = preview.split(" ").slice(0, 22).join(" ") + "...";
 
@@ -238,5 +297,6 @@
         notice.textContent = "Couldn't load posts.json.";
       });
   </script>
+
 </body>
 </html>
