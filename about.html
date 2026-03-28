@@ -5,158 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Hasinova</title>
 
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --purple: #c8b6ff;
-      --pink: #ffd6ec;
-      --text: #2d2d2d;
-    }
-
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      color: var(--text);
-      overflow-x: hidden;
-      background: linear-gradient(120deg, #f9f5ff, #ffeaf4);
+      background: #3f3a75; /* deep purple border bg */
     }
 
-    /* 🌫️ dreamy blobs */
-    .blob {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.6;
-      z-index: 0;
-      animation: float 10s ease-in-out infinite alternate;
+    /* MAIN CARD */
+    .wrapper {
+      margin: 40px;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      min-height: 85vh;
+      background: #fff;
     }
 
-    .blob1 {
-      width: 300px;
-      height: 300px;
-      background: var(--purple);
-      top: -80px;
-      left: -60px;
-    }
-
-    .blob2 {
-      width: 350px;
-      height: 350px;
-      background: var(--pink);
-      bottom: -100px;
-      right: -80px;
-      animation-delay: 3s;
-    }
-
-    @keyframes float {
-      from { transform: translateY(0px); }
-      to { transform: translateY(40px); }
-    }
-
-    /* ✨ section */
-    .about {
+    /* LEFT SIDE */
+    .left {
+      flex: 1;
+      background: #f5ede8;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 80px 20px;
       position: relative;
-      z-index: 1;
     }
 
-    /* 🫧 popup card */
-    .about-container {
-      max-width: 1000px;
+    /* RIGHT SIDE WITH WAVE */
+    .right {
+      flex: 1;
+      background: #f7a9b8;
+      position: relative;
+      padding: 60px;
       display: flex;
-      gap: 40px;
       align-items: center;
-      flex-wrap: wrap;
-
-      background: rgba(255,255,255,0.65);
-      backdrop-filter: blur(18px);
-      border-radius: 30px;
-      padding: 50px;
-
-      box-shadow: 0 30px 90px rgba(0,0,0,0.15);
     }
 
-    /* 🌸 image */
+    /* WAVE SHAPE */
+    .right::before {
+      content: "";
+      position: absolute;
+      left: -120px;
+      top: 0;
+      width: 200px;
+      height: 100%;
+      background: #f5ede8;
+      border-radius: 100px;
+    }
+
+    /* IMAGE */
     .about-image {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-
-      border: 6px solid rgba(255,255,255,0.9);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      width: 260px;
+      border-radius: 20px;
     }
 
-    .about-image:hover {
-      transform: scale(1.05);
+    /* TEXT */
+    .content {
+      position: relative;
+      z-index: 2;
     }
 
-    /* 💜 title */
     h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 2.4rem;
-      margin-bottom: 15px;
-
-      background: linear-gradient(90deg, #b892ff, #ff9ecf);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-family: "Fredoka", sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
 
-    /* ✍️ text (UNCHANGED content) */
     p {
       line-height: 1.7;
+      font-size: 0.95rem;
     }
 
-    /* 🧩 chips */
-    .info-chips {
-      margin-top: 25px;
+    /* CHIPS */
+    .chips {
+      margin-top: 20px;
       display: flex;
+      gap: 10px;
       flex-wrap: wrap;
-      gap: 12px;
     }
 
     .chip {
-      padding: 10px 16px;
-      border-radius: 25px;
-      font-size: 0.85rem;
-
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(0,0,0,0.05);
-
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
+      background: #fff;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
     }
 
-    .chip:hover {
-      transform: translateY(-3px);
-    }
-
-    /* ✨ highlight */
-    .about-highlight {
+    /* HIGHLIGHT */
+    .highlight {
       margin-top: 25px;
-      padding: 20px;
-      border-radius: 16px;
-
-      background: linear-gradient(135deg, rgba(200,182,255,0.3), rgba(255,214,236,0.3));
+      background: #fff;
+      padding: 15px;
+      border-radius: 15px;
+      font-size: 0.9rem;
     }
 
-    /* 🐱 subtle vibe icons */
-    .vibes {
-      margin-top: 15px;
-      font-size: 1.1rem;
-      opacity: 0.6;
+    /* HEADER */
+    header {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      color: black;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
     }
 
     @media (max-width: 768px) {
-      .about-container {
+      .wrapper {
         flex-direction: column;
-        text-align: center;
+      }
+      .right::before {
+        display: none;
       }
     }
   </style>
@@ -164,35 +136,20 @@
 
 <body>
 
-  <!-- 🌫️ blobs -->
-  <div class="blob blob1"></div>
-  <div class="blob blob2"></div>
+  <div class="wrapper">
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="logo">
-      <a href="index.html"><span class="hasini">HASI</span><span class="nova">NOVA</span></a>
+    <!-- LEFT -->
+    <div class="left">
+      <img src="assets/images/me.jpg" class="about-image">
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="tech/techindex.html">Tech</a>
-      <a href="poems/poemsindex.html">Poems</a>
-      <a href="guide.html">Guides</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="about-container">
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="content">
 
-      <img src="assets/images/me.jpg" alt="Bindu Hasini" class="about-image">
-
-      <div class="about-text">
         <h1>About Hasinova</h1>
 
-        <!-- ✅ YOUR ORIGINAL TEXT KEPT EXACTLY -->
+        <!-- SAME TEXT -->
         <p>
           Hi, I’m <strong>Bindu Hasini</strong>- the writer, developer, and dreamer behind <strong>Hasinova</strong>.  
           This space was born out of my love for both structured logic and untamed creativity.  
@@ -208,29 +165,21 @@
           I like to think of it as a constellation of thoughts — each post a tiny light in the digital night.
         </p>
 
-        <div class="info-chips">
+        <div class="chips">
           <div class="chip">🎓 BTech CSE</div>
-          <div class="chip">💻 Web Development</div>
-          <div class="chip">📱 App Development</div>
-          <div class="chip">⚛️ Quantum Computing</div>
+          <div class="chip">💻 Web Dev</div>
+          <div class="chip">📱 App Dev</div>
+          <div class="chip">⚛️ Quantum</div>
         </div>
 
-        <div class="vibes">
-          🐱 💜 ✨ 🎧 🎬
-        </div>
-
-        <div class="about-highlight">
+        <div class="highlight">
           ✨ <strong>In short:</strong> Hasinova is my digital notebook- documenting how code, stories, and poetry intertwine to make sense of a chaotic, beautiful world.
         </div>
 
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 <strong>Hasinova</strong> — Where Code meets Poetry | Crafted by Bindu Hasini</p>
-  </footer>
+  </div>
 
 </body>
 </html>
