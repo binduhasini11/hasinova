@@ -70,6 +70,12 @@ body {
   letter-spacing: 2px;
 }
 
+/* ✅ FIX: remove underline from HASINOVA logo */
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo .hasini { color: #222; }
 .logo .nova { color: #b59b82; font-weight: 900; }
 
