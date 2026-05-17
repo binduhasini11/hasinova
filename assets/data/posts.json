@@ -43,7 +43,7 @@
   "title": "My First PR",
   "date": "2026-05-17",
   "category": "Tech",
-  "thumbnail": "prheader.jpeg",
+  "thumbnail": "pr.jpg",
   "excerpt": "My journey into open source through GSSoC'26 — debugging, learning Git, and opening my first pull request.",
   "link": "tech/opensource.html"
 }
