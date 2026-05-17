@@ -38,7 +38,15 @@
     "thumbnail": "techchaos.jpg",
     "excerpt": "Tech looks simple on the surface, but beneath every smooth interface lies layers of complexity, confusion, and constant learning. Here’s how I’m navigating through the chaos.",
     "link": "tech/techworld-3.html"
-  }
+  },
+  {
+  "title": "My First PR",
+  "date": "2026-05-17",
+  "category": "Tech",
+  "thumbnail": "prheader.jpg",
+  "excerpt": "My journey into open source through GSSoC'26 — debugging, learning Git, and opening my first pull request.",
+  "link": "tech/opensource.html"
+}
 ]
 
 
