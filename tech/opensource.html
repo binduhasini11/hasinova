@@ -162,22 +162,6 @@
       padding: 0 20px;
     }
 
-    .article {
-      animation: fadeUp 1s ease;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .article p {
       margin-bottom: 28px;
       color: #2d2d2d;
@@ -191,16 +175,11 @@
       font-weight: 700;
     }
 
-    .highlight-quote {
-      margin: 50px 0;
-      padding: 40px;
-      border-left: 3px solid #111;
-      background: white;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      line-height: 1.5;
-      font-style: italic;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    .pr-image {
+      margin: 40px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     .learning-grid {
@@ -220,18 +199,6 @@
     .learning-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
-
-    .learning-card h4 {
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-
-    .pr-image {
-      margin: 40px 0;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     .sidebar {
@@ -268,28 +235,6 @@
       font-size: 0.96rem;
     }
 
-    .sidebar-section {
-      background: white;
-      padding: 30px;
-      border: 1px solid #ececec;
-      margin-bottom: 30px;
-    }
-
-    .sidebar-section h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-
-    .sidebar-section ul {
-      list-style: none;
-    }
-
-    .sidebar-section li {
-      margin-bottom: 15px;
-      color: #444;
-    }
-
     footer {
       margin-top: 100px;
       border-top: 1px solid #e5e5e5;
@@ -311,13 +256,8 @@
     }
 
     @media(max-width: 900px) {
-
       .container {
         grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: static;
       }
 
       .hero h1 {
@@ -326,32 +266,6 @@
 
       .navbar {
         padding: 25px 25px;
-      }
-
-      .nav-links {
-        gap: 18px;
-        font-size: 0.72rem;
-      }
-    }
-
-    @media(max-width: 600px) {
-
-      .navbar {
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .hero-content {
-        bottom: 70px;
-      }
-
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-
-      .highlight-quote {
-        font-size: 1.35rem;
-        padding: 28px;
       }
     }
   </style>
@@ -376,12 +290,10 @@
     </nav>
 
     <img src="../assets/images/prheader.jpg" alt="My First PR">
-
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
       <div class="hero-tag">Open Source Journey</div>
-
       <h1>My First PR</h1>
 
       <p class="hero-sub">
@@ -404,38 +316,42 @@
       </p>
 
       <p>
-        A few days ago, terms like “fork”, “branch”, “commit”, “upstream”, and “PR” sounded intimidating to me. I had seen developers casually talk about contributing to open source online, but the entire workflow felt confusing from the outside.
+        A few days ago, terms like “fork”, “branch”, “commit”, “upstream”, and “PR” sounded intimidating to me.
       </p>
 
       <p>
         But today, after hours of debugging, Googling, fixing broken code, staring at terminal errors, and refreshing localhost way too many times… I finally did it.
       </p>
 
-      <div class="highlight-quote">
+      <p style="font-style: italic; color:#444;">
         “The most surprising thing was realizing that open source isn’t some unreachable thing only experienced developers do.”
-      </div>
+      </p>
 
       <h2>The Project: StudyPlan</h2>
 
       <p>
-        I contributed to a project called StudyPlan and worked on adding bulk task management functionality. At one point, none of the buttons worked anymore on localhost.
-      </p>
-
-      <p>
-        Then I found out I had accidentally broken store.js with a missing bracket and got hit with:
+        I contributed to a project called StudyPlan and worked on adding bulk task management functionality.
       </p>
 
       <div class="pr-image">
-        <img src="../assets/images/pr.jpg" alt="Pull Request Screenshot">
+        <img src="../assets/images/pr.jpg" alt="pr Screenshot">
       </div>
+
+      <p>
+        At one point, none of the buttons worked anymore on localhost.
+      </p>
 
       <p>
         I genuinely thought I had destroyed the entire project for a second.
       </p>
 
       <p>
-        But after fixing it and seeing everything work again, I had one of those moments where coding suddenly feels rewarding in a very specific way. Not because the feature was huge , but because I finally understood the workflow from start to finish.
-      </p>
+  Then I found out I had accidentally broken store.js with a missing bracket and got hit with:
+</p>
+
+<p style="color: #d11a2a; font-family: monospace; background: #fff; padding: 12px 16px; border-left: 4px solid #d11a2a; margin: 20px 0;">
+  Uncaught SyntaxError: Unexpected end of input
+</p>
 
       <h2>What I Learned</h2>
 
@@ -463,24 +379,12 @@
 
       </div>
 
-      <div class="highlight-quote" style="margin-top:70px;">
+      <p style="margin-top:70px; font-style: italic;">
         “Most importantly, I learned how normal it is to break things while learning.”
-      </div>
-
-      <p>
-        My PR is still under review, but regardless of whether it gets merged immediately or not, this already feels like a huge personal milestone.
       </p>
 
       <p>
-        This wasn’t just “my first PR.”
-      </p>
-
-      <p>
-        It was the first time I truly felt like I contributed something real to software that other people can use.
-      </p>
-
-      <p>
-        And I think that feeling is going to stay with me for a long time.
+        My PR is still under review, but this already feels like a huge milestone.
       </p>
 
     </article>
@@ -490,7 +394,7 @@
       <div class="author-card">
         <img src="../assets/images/me.jpg" alt="Hasinova">
 
-        <h3>Hi, I'm Hasinova</h3>
+        <h3>Welcome to HASINOVA!</h3>
 
         <p>
           Student • Developer • Storyteller <br><br>
@@ -499,34 +403,13 @@
         </p>
       </div>
 
-      <div class="sidebar-section">
-        <h4>Highlights</h4>
-
-        <ul>
-          <li>→ First Open Source PR</li>
-          <li>→ GSSoC'26 Contributor</li>
-          <li>→ Learned Git + PR Workflow</li>
-          <li>→ Built Bulk Task Features</li>
-        </ul>
-      </div>
-
-      <div class="sidebar-section">
-        <h4>Connect</h4>
-
-        <ul>
-          <li><a href="https://github.com/binduhasini11">GitHub</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Instagram</a></li>
-        </ul>
-      </div>
-
     </aside>
 
   </main>
 
   <footer>
 
-    <p>© 2026 HASINOVA — Built with stories, code, and curiosity.</p>
+    <p>© 2026 HASINOVA </p>
 
     <div class="footer-links">
       <a href="../index.html">Home</a>
