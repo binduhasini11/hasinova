@@ -1,6 +1,4 @@
-/* =========================================================
-   GLOBAL STYLES — SOFT PASTEL + GHIBLI FLOATING AESTHETIC
-   ========================================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,10 +10,8 @@ body {
   color: #222;
   line-height: 1.6;
 
-  /* Soft pastel gradient */
   background: linear-gradient(135deg, #f8f3ee, #f2ebe3, #f7f1ef);
 
-  /* Subtle grid pattern */
   background-image:
     linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
@@ -24,7 +20,6 @@ body {
   overflow-x: hidden;
 }
 
-/* FLOATING GHIBLI ELEMENTS */
 .floating-bubble {
   position: fixed;
   border-radius: 50%;
@@ -40,16 +35,13 @@ body {
   100% { transform: translateY(-180vh) translateX(40px); opacity: 0; }
 }
 
-/* Generate multiple floating pastel bubbles */
 .floating-bubble:nth-child(1) { width: 70px; height: 70px; left: 10%; animation-duration: 22s; background:#f6dada; }
 .floating-bubble:nth-child(2) { width: 100px; height: 100px; left: 40%; animation-duration: 26s; background:#fde6c8; }
 .floating-bubble:nth-child(3) { width: 60px; height: 60px; left: 70%; animation-duration: 20s; background:#e3f3ff; }
 .floating-bubble:nth-child(4) { width: 90px; height: 90px; left: 85%; animation-duration: 24s; background:#e8f7e5; }
 .floating-bubble:nth-child(5) { width: 50px; height: 50px; left: 25%; animation-duration: 28s; background:#f0e4ff; }
 
-/* =========================================================
-   HEADER — Glassy Pastel
-   ========================================================= */
+
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -70,7 +62,6 @@ body {
   letter-spacing: 2px;
 }
 
-/* ✅ FIX: remove underline from HASINOVA logo */
 .logo a {
   text-decoration: none;
   color: inherit;
@@ -97,9 +88,7 @@ body {
   color: #b59b82;
 }
 
-/* =========================================================
-   HERO SECTION — Soft Glow + Smooth Fade
-   ========================================================= */
+
 .hero {
   text-align: center;
   padding: 110px 10%;
@@ -151,9 +140,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* =========================================================
-   LATEST POSTS — Pastel Cards
-   ========================================================= */
 .latest-posts {
   padding: 80px 8%;
   text-align: center;
@@ -189,6 +175,13 @@ body {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+
+.post-card:hover img {
+  transform: scale(1.05);
 }
 
 .post-card h3 {
@@ -208,9 +201,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* =========================================================
-   ABOUT PAGE — Pastel Glow
-   ========================================================= */
 .about {
   background: rgba(255,255,255,0.65);
   backdrop-filter: blur(8px);
@@ -238,10 +228,6 @@ body {
 
 .about-text h1 span { color: #b59b82; }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-footer {
   text-align: center;
   padding: 40px;
   background: rgba(255,255,255,0.55);
@@ -255,9 +241,7 @@ footer {
 
 footer strong { color: #b59b82; }
 
-/* =========================================================
-   POST HEADER IMAGE
-   ========================================================= */
+
 .post-header-image img {
   width: 100%;
   max-height: 350px;
