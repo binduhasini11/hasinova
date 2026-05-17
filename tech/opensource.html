@@ -1,47 +1,429 @@
-<div class="pr-image">
-  <img src="../assets/images/pr.jpg" alt="pr Screenshot">
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My First PR</title>
 
-<p>
-  at one point, none of the buttons worked anymore on localhost. Then I found out I had accidentally broken store.js with a missing bracket and got hit with:
-</p>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<p style="color: #d11a2a; font-family: monospace; background: #fff; padding: 12px 16px; border-left: 4px solid #d11a2a; margin: 20px 0;">
-  Uncaught SyntaxError: Unexpected end of input
-</p>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<p>
-  I genuinely thought I had destroyed the entire project for a second.
-</p>
+    html {
+      scroll-behavior: smooth;
+    }
 
-<p>
-  But after fixing it and seeing everything work again, I had one of those moments where coding suddenly feels rewarding in a very specific way. Not because the feature was huge, but because I finally understood the workflow from start to finish.
-</p>
+    body {
+      background: #f8f8f6;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.9;
+    }
 
-<p>
-  I learned how to work on feature branches, how to commit changes properly, how PRs are created, how local development actually works, how frontend state management connects with UI interactions, and most importantly, how normal it is to break things while learning.
-</p>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-<p>
-  The most surprising thing was realizing that open source isn’t some unreachable thing only experienced developers do. Most of it is simply:
-</p>
+    img {
+      width: 100%;
+      display: block;
+    }
 
-<p>
-  * reading code patiently<br>
-  * experimenting<br>
-  * debugging<br>
-  * asking questions<br>
-  * and continuing even after confusion
-</p>
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 30px 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
 
-<p>
-  This wasn’t just “my first PR.”
-</p>
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-<p>
-  It was the first time I truly felt like I contributed something real to software that other people can use.
-</p>
+    .nav-links {
+      display: flex;
+      gap: 35px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-<p>
-  And I think that feeling is going to stay with me for a long time.
-</p>
+    .nav-links a {
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 1px;
+      background: white;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      position: relative;
+      height: 85vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(55%);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.45)
+      );
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1000px;
+      color: white;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.5);
+      margin-bottom: 25px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      line-height: 1;
+      max-width: 850px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      max-width: 650px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .publish-date {
+      max-width: 1000px;
+      margin: 35px auto 0;
+      padding: 0 20px;
+      color: #666;
+      font-size: 0.95rem;
+      letter-spacing: 0.4px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 70px auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      padding: 0 20px;
+    }
+
+    .article p {
+      margin-bottom: 28px;
+      color: #2d2d2d;
+      font-size: 1.04rem;
+    }
+
+    .article h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      margin: 70px 0 25px;
+      font-weight: 700;
+    }
+
+    .pr-image {
+      margin: 40px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .learning-card {
+      background: white;
+      padding: 28px 22px;
+      border: 1px solid #eee;
+      transition: 0.3s ease;
+    }
+
+    .learning-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 40px;
+      height: fit-content;
+    }
+
+    .author-card {
+      background: white;
+      padding: 35px;
+      border: 1px solid #ececec;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .author-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 22px;
+    }
+
+    .author-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .author-card p {
+      color: #555;
+      font-size: 0.96rem;
+    }
+
+    footer {
+      margin-top: 100px;
+      border-top: 1px solid #e5e5e5;
+      padding: 45px 20px;
+      text-align: center;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+    .footer-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .footer-links a:hover {
+      opacity: 0.6;
+    }
+
+    @media(max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .navbar {
+        padding: 25px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index.html">HASINOVA</a>
+      </div>
+
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/about.html">About</a>
+        <a href="../tech/techindex.html">Tech</a>
+        <a href="../poems/poems.html">Poems</a>
+        <a href="../guides/guides.html">Guides</a>
+      </div>
+    </nav>
+
+    <img src="../assets/images/prheader.jpeg" alt="My First PR">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Open Source Journey</div>
+      <h1>My First PR</h1>
+
+      <p class="hero-sub">
+        A beginner’s journey into open source, debugging chaos,
+        breaking things, and finally understanding how everything connects together.
+      </p>
+    </div>
+  </section>
+
+  <div class="publish-date">
+    Published on: May 17, 2026
+  </div>
+
+  <main class="container">
+
+    <article class="article">
+
+      <p>
+        As a beginner open-source contributor in GSSoC'26, today I opened my first ever Pull Request in an open-source project...and somehow it still feels unreal.
+      </p>
+
+      <p>
+        A few days ago, terms like “fork”, “branch”, “commit”, “upstream”, and “PR” sounded intimidating to me.
+      </p>
+
+      <p>
+        But today, after hours of debugging, Googling, fixing broken code, staring at terminal errors, and refreshing localhost way too many times… I finally did it.
+      </p>
+
+      <p style="font-style: italic; color:#444;">
+        “The most surprising thing was realizing that open source isn’t some unreachable thing only experienced developers do.”
+      </p>
+
+      <h2>The Project: StudyPlan</h2>
+
+      <p>
+        I contributed to a project called StudyPlan and worked on adding bulk task management functionality.
+      </p>
+
+      <div class="pr-image">
+        <img src="../assets/images/pr.jpg" alt="pr Screenshot">
+      </div>
+
+      <p>
+        at one point, none of the buttons worked anymore on localhost. Then I found out I had accidentally broken store.js with a missing bracket and got hit with:
+      </p>
+
+      <p style="color: #d11a2a; font-family: monospace; background: #fff; padding: 12px 16px; border-left: 4px solid #d11a2a; margin: 20px 0;">
+        Uncaught SyntaxError: Unexpected end of input
+      </p>
+
+      <p>
+        I genuinely thought I had destroyed the entire project for a second.
+      </p>
+
+      <p>
+        But after fixing it and seeing everything work again, I had one of those moments where coding suddenly feels rewarding in a very specific way. Not because the feature was huge, but because I finally understood the workflow from start to finish.
+      </p>
+
+      <p>
+        I learned how to work on feature branches, how to commit changes properly, how PRs are created, how local development actually works, how frontend state management connects with UI interactions, and most importantly, how normal it is to break things while learning.
+      </p>
+
+      <p>
+        The most surprising thing was realizing that open source isn’t some unreachable thing only experienced developers do. Most of it is simply:
+      </p>
+
+      <p>
+        * reading code patiently<br>
+        * experimenting<br>
+        * debugging<br>
+        * asking questions<br>
+        * and continuing even after confusion
+      </p>
+
+      <p>
+        My PR is still under review, but regardless of whether it gets merged immediately or not, this already feels like a huge personal milestone.
+      </p>
+
+      <p>
+        This wasn’t just “my first PR.”
+      </p>
+
+      <p>
+        It was the first time I truly felt like I contributed something real to software that other people can use.
+      </p>
+
+      <p>
+        And I think that feeling is going to stay with me for a long time.
+      </p>
+
+    </article>
+
+    <aside class="sidebar">
+
+      <div class="author-card">
+        <img src="../assets/images/me.jpg" alt="Hasinova">
+
+        <h3>Welcome to HASINOVA!</h3>
+
+        <p>
+          Student • Developer • Storyteller <br><br>
+          Documenting my journey through tech,
+          creativity, open source, and learning.
+        </p>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Highlights</h4>
+        <ul>
+          <li>→ First Open Source PR</li>
+          <li>→ GSSoC'26 Contributor</li>
+          <li>→ Learned Git + PR Workflow</li>
+          <li>→ Built Bulk Task Features</li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>© 2026 HASINOVA </p>
+
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="../tech/techindex.html">Tech</a>
+      <a href="../about/about.html">About</a>
+    </div>
+  </footer>
+
+</body>
+</html>
