@@ -37,17 +37,34 @@
       display: block;
     }
 
+    /* NAVBAR */
+
     .navbar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      padding: 30px 70px;
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: calc(100% - 50px);
+      max-width: 1320px;
+
+      z-index: 1000;
+
+      padding: 18px 38px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
+
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(14px);
+
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 18px;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+      color: #111;
     }
 
     .logo {
@@ -55,6 +72,10 @@
       font-size: 2rem;
       font-weight: 700;
       letter-spacing: 1px;
+    }
+
+    .logo a {
+      color: #111;
     }
 
     .nav-links {
@@ -68,6 +89,8 @@
     .nav-links a {
       position: relative;
       transition: 0.3s ease;
+      color: #222;
+      font-weight: 500;
     }
 
     .nav-links a::after {
@@ -77,7 +100,7 @@
       bottom: -6px;
       width: 0%;
       height: 1px;
-      background: white;
+      background: #b89d82;
       transition: 0.3s ease;
     }
 
@@ -85,17 +108,34 @@
       width: 100%;
     }
 
+    /* HERO */
+
     .hero {
       position: relative;
-      height: 85vh;
+      padding-top: 95px;
+      background: #f8f8f6;
+    }
+
+    .hero-card {
+      width: 94%;
+      max-width: 1380px;
+
+      margin: auto;
+
+      border-radius: 28px;
       overflow: hidden;
+
+      position: relative;
+
+      box-shadow:
+        0 20px 45px rgba(0,0,0,0.08);
     }
 
     .hero img {
       width: 100%;
-      height: 100%;
+      height: 82vh;
       object-fit: cover;
-      filter: brightness(55%);
+      filter: brightness(58%);
     }
 
     .hero-overlay {
@@ -103,18 +143,19 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.45)
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.5)
       );
     }
 
     .hero-content {
       position: absolute;
-      bottom: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 1000px;
+      bottom: 70px;
+      left: 60px;
+
+      width: calc(100% - 120px);
+      max-width: 900px;
+
       color: white;
     }
 
@@ -127,14 +168,16 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       backdrop-filter: blur(10px);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
     }
 
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem;
-      line-height: 1;
+      font-size: 5.2rem;
+      line-height: 0.98;
       max-width: 850px;
-      margin-bottom: 25px;
+      margin-bottom: 22px;
       font-weight: 700;
     }
 
@@ -143,6 +186,8 @@
       font-size: 1.05rem;
       color: rgba(255,255,255,0.88);
     }
+
+    /* CONTENT */
 
     .publish-date {
       max-width: 1000px;
@@ -177,33 +222,14 @@
 
     .pr-image {
       margin: 40px 0;
-      border-radius: 10px;
+      border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    .learning-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
-      margin-top: 35px;
-    }
-
-    .learning-card {
-      background: white;
-      padding: 28px 22px;
-      border: 1px solid #eee;
-      transition: 0.3s ease;
-    }
-
-    .learning-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
-
     .sidebar {
       position: sticky;
-      top: 40px;
+      top: 120px;
       height: fit-content;
     }
 
@@ -211,8 +237,10 @@
       background: white;
       padding: 35px;
       border: 1px solid #ececec;
+      border-radius: 18px;
       text-align: center;
       margin-bottom: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
     }
 
     .author-card img {
@@ -239,7 +267,9 @@
       background: white;
       padding: 30px;
       border: 1px solid #ececec;
+      border-radius: 18px;
       margin-bottom: 35px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
     }
 
     .sidebar-section h4 {
@@ -268,8 +298,10 @@
     .badge-box {
       background: white;
       border: 1px solid #ececec;
+      border-radius: 18px;
       padding: 30px;
       text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.04);
     }
 
     .badge-box h4 {
@@ -317,7 +349,10 @@
       opacity: 0.6;
     }
 
+    /* MOBILE */
+
     @media(max-width: 900px) {
+
       .container {
         grid-template-columns: 1fr;
       }
@@ -327,13 +362,32 @@
       }
 
       .navbar {
-        padding: 25px 25px;
+        width: calc(100% - 24px);
+        padding: 18px 20px;
+        top: 12px;
+        border-radius: 16px;
+      }
+
+      .nav-links {
+        gap: 18px;
+        font-size: 0.72rem;
+      }
+
+      .hero-content {
+        left: 30px;
+        bottom: 40px;
+        width: calc(100% - 60px);
+      }
+
+      .hero img {
+        height: 70vh;
       }
 
       .badge-grid {
         grid-template-columns: 1fr;
       }
     }
+
   </style>
 </head>
 
@@ -355,18 +409,25 @@
       </div>
     </nav>
 
-    <img src="../assets/images/prheader.jpeg" alt="My First PR">
-    <div class="hero-overlay"></div>
+    <div class="hero-card">
 
-    <div class="hero-content">
-      <div class="hero-tag">Open Source Journey</div>
-      <h1>My First PR</h1>
+      <img src="../assets/images/prheader.jpeg" alt="My First PR">
 
-      <p class="hero-sub">
-        A beginner’s journey into open source, debugging chaos,
-        breaking things, and finally understanding how everything connects together.
-      </p>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-tag">Open Source Journey</div>
+
+        <h1>My First PR</h1>
+
+        <p class="hero-sub">
+          A beginner’s journey into open source, debugging chaos,
+          breaking things, and finally understanding how everything connects together.
+        </p>
+      </div>
+
     </div>
+
   </section>
 
   <div class="publish-date">
