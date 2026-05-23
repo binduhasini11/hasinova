@@ -1,5 +1,5 @@
 # hasinova
-A personal blog built with pure HTML, CSS, and creativity
+A personal blog built with HTML, CSS, and creativity
 
 Welcome to Hasinova, my personal corner of the internet! This is where I share the things I’m passionate about: tech, projects, and a little bit of creativity along the way.
 
