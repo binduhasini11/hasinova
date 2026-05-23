@@ -235,6 +235,68 @@
       font-size: 0.96rem;
     }
 
+    .sidebar-section {
+      background: white;
+      padding: 30px;
+      border: 1px solid #ececec;
+      margin-bottom: 35px;
+    }
+
+    .sidebar-section h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+      color: #111;
+    }
+
+    .sidebar-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar-section li {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      color: #444;
+      font-size: 0.97rem;
+    }
+
+    .sidebar-section li:last-child {
+      border-bottom: none;
+    }
+
+    .badge-box {
+      background: white;
+      border: 1px solid #ececec;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .badge-box h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      margin-bottom: 22px;
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .badge-grid img {
+      border-radius: 12px;
+      border: 1px solid #eee;
+      transition: 0.3s ease;
+      background: #fafafa;
+      padding: 10px;
+    }
+
+    .badge-grid img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
     footer {
       margin-top: 100px;
       border-top: 1px solid #e5e5e5;
@@ -266,6 +328,10 @@
 
       .navbar {
         padding: 25px 25px;
+      }
+
+      .badge-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -370,10 +436,6 @@
       </p>
 
       <p>
-        My PR is still under review, but regardless of whether it gets merged immediately or not, this already feels like a huge personal milestone.
-      </p>
-
-      <p>
         This wasn’t just “my first PR.”
       </p>
 
@@ -403,12 +465,22 @@
 
       <div class="sidebar-section">
         <h4>Highlights</h4>
+
         <ul>
           <li>→ First Open Source PR</li>
           <li>→ GSSoC'26 Contributor</li>
           <li>→ Learned Git + PR Workflow</li>
-          <li>→ Built Bulk Task Features</li>
+          <li>→ Improved and added new features</li>
         </ul>
+      </div>
+
+      <div class="badge-box">
+        <h4>GSSoC'26 Badges</h4>
+
+        <div class="badge-grid">
+          <img src="../assets/images/badge1.jpg" alt="GSSoC Badge 1">
+          <img src="../assets/images/badge2.jpg" alt="GSSoC Badge 2">
+        </div>
       </div>
 
     </aside>
