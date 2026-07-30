@@ -1,359 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guides | Hasinova</title>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Guides | Hasinova
+  </title>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/><style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #e8fff8, #fff1ec);
+    color: #2c2c2c;
+  }
 
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+  }
 
-  <style>
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+  }
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #e8fff8, #fff1ec);
-      color: #2c2c2c;
-    }
+  .logo a {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.4rem;
+  }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-      background-size: 30px 30px;
-      pointer-events: none;
-    }
+  .hasini {
+    color: #1b5e20;
+  }
 
-    .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(10px);
-    }
+  .nova {
+    color: #ff8a65;
+  }
 
-    .logo a {
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.4rem;
-    }
+  .nav-links a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #444;
+  }
 
-    .hasini { color: #1b5e20; }
-    .nova { color: #ff8a65; }
+  .nav-links .active {
+    font-weight: 700;
+    color: #000;
+  }
 
-    .nav-links a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #444;
-      font-weight: 500;
-    }
+  .posts-section {
+    max-width: 1120px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+  }
 
-    .nav-links a.active {
-      color: #000;
-      font-weight: 700;
-    }
+  .guide-intro,
+  .contact-strip,
+  .post-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
 
-    .nav-links a:hover { color: #ff8a65; }
+  .guide-intro {
+    padding: 22px;
+    text-align: left;
+  }
 
-    .posts-section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 20px;
-      text-align: center;
-    }
+  .guide-intro li {
+    margin: 10px 0;
+  }
 
-    .posts-section h1 {
-      font-size: 2.6rem;
-      margin-bottom: 10px;
-    }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 40px 0 18px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: left;
+  }
 
-    .posts-section > p {
-      color: #555;
-      font-size: 1.05rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      line-height: 1.7;
-    }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #ff8a65, transparent);
+  }
 
-    .guide-intro {
-      background: rgba(255,255,255,0.7);
-      border-radius: 14px;
-      padding: 20px 25px;
-      margin-bottom: 40px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      text-align: left;
-    }
+  .posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
 
-    .guide-intro ul {
-      padding-left: 18px;
-      line-height: 1.8;
-    }
+  .post-card {
+    padding: 18px;
+    text-align: left;
+  }
 
-    .guide-intro a {
-      color: #ff7043;
-      text-decoration: none;
-      font-weight: 500;
-    }
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7b8cff, #c38cff);
+    color: #fff;
+    font-size: 3rem;
+  }
 
-    /* section labels */
-    .section-label {
-      font-size: 1.3rem;
-      font-weight: 700;
-      text-align: left;
-      margin: 40px 0 16px;
-      color: #222;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+  h3 {
+    margin: 8px 0;
+  }
 
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 2px;
-      background: linear-gradient(90deg, #ff8a65, transparent);
-      border-radius: 2px;
-    }
+  a {
+    color: #ff7043;
+    text-decoration: none;
+  }
 
-    /* cards grid */
-    .posts-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
+  p {
+    line-height: 1.6;
+    color: #555;
+  }
 
-    .post-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 15px;
-      text-align: left;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
-    }
+  .contact-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    padding: 22px;
+  }
 
-    .post-card:hover {
-      transform: translateY(-8px) scale(1.01);
-      box-shadow: 0 18px 35px rgba(0,0,0,0.12);
-    }
+  .badge {
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: #ff7043;
+    color: #fff;
+  }
 
-    .post-card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 12px;
-    }
-
-    .post-card.poetry-card {
-      background: linear-gradient(135deg, #fff0f8, #f8f0ff);
-      border: 1.5px solid #e8c8f0;
-    }
-
-    .poetry-card-banner {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      height: 130px;
-      background: linear-gradient(120deg, #d8a8e8, #f0a0c8, #c8a0e8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.8rem;
-      letter-spacing: 6px;
-    }
-
-    .post-card h3 {
-      margin: 8px 0;
-      font-size: 1.2rem;
-    }
-
-    .post-card h3 a {
-      text-decoration: none;
-      color: #222;
-    }
-
-    .post-card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .post-card a {
-      color: #2e7d32;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .post-card a:hover { text-decoration: underline; }
-
-    .poetry-card a { color: #8b3a9e; }
-
-    /* contact strip */
-    .contact-strip {
-      margin-top: 50px;
-      background: rgba(255,255,255,0.7);
-      border-radius: 14px;
-      padding: 22px 28px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 14px;
-      text-align: left;
-    }
-
-    .contact-strip p {
-      margin: 0;
-      font-size: 0.97rem;
-      color: #444;
-    }
-
-    .contact-strip strong { color: #222; }
-
-    .contact-strip a {
-      color: #ff7043;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .contact-strip a:hover { text-decoration: underline; }
-
-    .contact-badge {
-      background: linear-gradient(135deg, #ff8a65, #ff5722);
-      color: #fff;
-      border-radius: 30px;
-      padding: 10px 22px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-    }
-
-    .contact-badge:hover { opacity: 0.85; text-decoration: none; color: #fff; }
-
-    footer {
-      text-align: center;
-      margin: 50px 0 20px;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <!-- HEADER -->
+  footer {
+    margin: 40px 0;
+    text-align: center;
+    color: #666;
+  }
+</style> </head>
+ <body>
   <header class="site-header">
-    <div class="logo">
-      <a href="index.html"><span class="hasini">HASI</span><span class="nova">NOVA</span></a>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="tech/techindex.html">Tech</a>
-      <a href="guide.html" class="active">Guides</a>
-      <a href="poems/poemsindex.html">Poems</a>
-    </nav>
+   <div class="logo">
+    <a href="index.html">
+     <span class="hasini">
+      HASI
+     </span>
+     <span class="nova">
+      NOVA
+     </span>
+    </a>
+   </div>
+   <nav class="nav-links">
+    <a href="index.html">
+     Home
+    </a>
+    <a href="about.html">
+     About
+    </a>
+    <a href="tech/techindex.html">
+     Tech
+    </a>
+    <a class="active" href="guide.html">
+     Guides
+    </a>
+    <a href="poems/poemsindex.html">
+     Poems
+    </a>
+   </nav>
   </header>
-
-  <!-- SECTION -->
   <section class="posts-section">
-    <h1>Guides & Projects 🚀</h1>
-    <p>little corner of the internet where i figure things out, build stuff, and share it along the way :)</p>
-
-    <div class="guide-intro">
-      <ul>
-        <li><strong>explore the blog:</strong> use the nav bar to jump into tech, poems, or guides. latest posts live on the <a href="index.html">home page</a>.</li>
-        <li><strong>check out projects:</strong> below are things i've built: messy, evolving, and very real.</li>
-        <li><strong>read my poetry:</strong> i also write on <a href="https://allpoetry.com/Bubblesss" target="_blank">AllPoetry</a>.. come say hi ✨</li>
-      </ul>
+   <p>
+    little corner of the internet where i figure things out, build stuff, and share it along the way :)
+   </p>
+   <div class="guide-intro">
+    <ul>
+     <li>
+      <b>
+       what you'll find here:
+      </b>
+      project write-ups, development notes, tutorials, and lessons learned while building real projects.
+     </li>
+     <li>
+      <b>
+       current interests:
+      </b>
+      artificial intelligence, computer vision, full-stack development, open source, and creating tools that solve everyday problems.
+     </li>
+     <li>
+      <b>
+       beyond code:
+      </b>
+      I also write poetry on
+      <a href="https://allpoetry.com/Bubblesss" target="_blank">
+       AllPoetry
+      </a>
+      . Sometimes code needs feelings too ✨
+     </li>
+    </ul>
+   </div>
+   <div class="section-label">
+    🛠️ Featured Projects
+   </div>
+   <div class="posts-container">
+    <div class="post-card">
+     <div class="banner">
+      🤖
+     </div>
+     <h3>
+      <a href="https://github.com/binduhasini11/github-project-mentor-ai" target="_blank">
+       GitHub Project Mentor AI
+      </a>
+     </h3>
+     <p>
+      AI-powered platform that recommends project ideas based on a student's skills, interests, career goals, and available time.
+     </p>
     </div>
-
-    <!-- Projects -->
-    <div class="section-label">🛠️ Projects</div>
-    <div class="posts-container">
-
-      <div class="post-card">
-        <img src="assets/images/sample-guide.jpg" alt="Student Task Manager Project">
-        <h3>
-          <a href="https://binduhasini11.github.io/Student-Task-Manager/" target="_blank">
-            Student Task Manager
-          </a>
-        </h3>
-        <p>a simple web app to organize your day ! built with python and html .</p>
-        <p>
-          <a href="https://binduhasini11.github.io/Student-Task-Manager/" target="_blank">
-            view project →
-          </a>
-        </p>
-      </div>
-
-      <div class="post-card">
-        <img src="assets/images/sample2.jpg" alt="Other Projects">
-        <h3>
-          <a href="https://github.com/binduhasini11" target="_blank">
-            more projects on github
-          </a>
-        </h3>
-        <p>random builds, experiments, and things i tried figuring out at 2am.</p>
-        <p>
-          <a href="https://github.com/binduhasini11" target="_blank">
-            explore →
-          </a>
-        </p>
-      </div>
-
+    <div class="post-card">
+     <div class="banner" style="background:linear-gradient(135deg,#46c6b2,#7ce3ff)">
+      🧠
+     </div>
+     <h3>
+      <a href="https://github.com/binduhasini11/mnemonics-master" target="_blank">
+       Mnemonics Master
+      </a>
+     </h3>
+     <p>
+      AI-powered mnemonic generation platform that helps students learn faster with personalized memory techniques.
+     </p>
     </div>
-
-    <!-- Poetry -->
-    <div class="section-label">🌸 Poetry</div>
-    <div class="posts-container">
-
-      <div class="post-card poetry-card">
-        <div class="poetry-card-banner">✦ ☽ ✦</div>
-        <h3>
-          <a href="https://allpoetry.com/Bubblesss" target="_blank">
-            AllPoetry — Bubblesss
-          </a>
-        </h3>
-        <p>If something here felt a little too real or stayed longer than expected...  
-        there’s more of that quiet chaos waiting for you 🌙</p>
-        <p>
-          <a href="https://allpoetry.com/Bubblesss" target="_blank">
-            Check out some poetry!→
-          </a>
-        </p>
-      </div>
-
+    <div class="post-card">
+     <div class="banner" style="background:linear-gradient(135deg,#ff8a65,#ffcc70)">
+      ✋
+     </div>
+     <h3>
+      <a href="https://github.com/binduhasini11/AirCanvas" target="_blank">
+       AirCanvas
+      </a>
+     </h3>
+     <p>
+      Gesture-controlled virtual painting application built using OpenCV and MediaPipe.
+     </p>
     </div>
-
-    <!-- Contact strip -->
-    <div class="contact-strip">
-      <div>
-       <p>
-  drop me a message at 
-  <a href="mailto:binduhasini11@gmail.com">binduhasini11@gmail.com</a> 💌
-</p>
-<p>
-  or connect with me on 
-  <a href="https://www.linkedin.com/in/bindu-hasini-b-5a38bb225" target="_blank">
-    linkedin
-  </a> 🤝
-</p>
-      </div>
-      <a class="contact-badge" href="mailto:binduhasini11@gmail.com">✉ get in touch</a>
+    <div class="post-card">
+     <div class="banner" style="background:linear-gradient(135deg,#6bcf63,#2e7d32)">
+      📚
+     </div>
+     <h3>
+      <a href="https://github.com/binduhasini11/Student-Task-Manager" target="_blank">
+       Student Task Manager
+      </a>
+     </h3>
+     <p>
+      Flask + MySQL task manager created by students, for students.
+     </p>
     </div>
-
+    <div class="post-card">
+     <div class="banner" style="background:linear-gradient(135deg,#2d3250,#5c6bc0)">
+      🚀
+     </div>
+     <h3>
+      <a href="https://github.com/binduhasini11/space-shooter-game" target="_blank">
+       Space Shooter
+      </a>
+     </h3>
+     <p>
+      A classic arcade-style space shooter game built while exploring game development.
+     </p>
+    </div>
+    <div class="post-card">
+     <div class="banner" style="background:linear-gradient(135deg,#555,#222)">
+      🌐
+     </div>
+     <h3>
+      <a href="https://github.com/binduhasini11" target="_blank">
+       More on GitHub
+      </a>
+     </h3>
+     <p>
+      Hackathon projects, open-source contributions, experiments, and ideas currently in development.
+     </p>
+    </div>
+   </div>
+   <div class="section-label">
+    💡 Domains
+   </div>
+   <div class="posts-container">
+    <div class="post-card">
+     <h3>
+      🤖 Artificial Intelligence
+     </h3>
+     <p>
+      LLMs, RAG, embeddings, intelligent automation, and educational AI tools.
+     </p>
+    </div>
+    <div class="post-card">
+     <h3>
+      👁️ Computer Vision
+     </h3>
+     <p>
+      Interactive applications using OpenCV, MediaPipe,YOLO and real-time gesture recognition and societal applications.
+     </p>
+    </div>
+    <div class="post-card">
+     <h3>
+      💻 Full-Stack Development
+     </h3>
+     <p>
+      Responsive web applications with Flask, databases, and modern frontend technologies.
+     </p>
+    </div>
+    <div class="post-card">
+     <h3>
+      🌍 Open Source
+     </h3>
+     <p>
+      <strong>
+       GSSoC 2026 Contributor
+      </strong>
+      <br/>
+      Contributing to beginner-friendly repositories through documentation improvements, bug fixes, and feature development while learning collaborative software engineering.
+     </p>
+    </div>
+   </div>
+   <div class="section-label">
+    🌸 Poetry
+   </div>
+   <div class="post-card">
+    <div class="banner" style="background:linear-gradient(135deg,#d8a8e8,#f0a0c8)">
+     ✦ ☽ ✦
+    </div>
+    <h3>
+     <a href="https://allpoetry.com/Bubblesss" target="_blank">
+      AllPoetry — Bubblesss
+     </a>
+    </h3>
+    <p>
+     If something here resonated with you, you'll probably enjoy the words waiting there too.
+    </p>
+   </div>
+   <div class="contact-strip">
+    <div>
+     Drop me a message at
+     <a href="mailto:binduhasini11@gmail.com">
+      binduhasini11@gmail.com
+     </a>
+     <br/>
+     Connect on
+     <a href="https://www.linkedin.com/in/bindu-hasini-b-5a38bb225" target="_blank">
+      LinkedIn
+     </a>
+     .
+    </div>
+    <a class="badge" href="mailto:binduhasini11@gmail.com">
+     Let's Connect
+    </a>
+   </div>
   </section>
-
   <footer>
-    <p>©<strong>Hasinova</strong>y</p>
+   ©
+   <strong>
+    Hasinova
+   </strong>
   </footer>
-
-</body>
+ </body>
 </html>
