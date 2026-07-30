@@ -69,9 +69,7 @@
       .then(res => res.json())
       .then(posts => {
         const container = document.getElementById('latestPosts');
-
         posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
         posts.forEach(post => {
           const card = document.createElement('div');
           card.classList.add('post-card', 'pastel-card');
@@ -83,7 +81,6 @@
             <h3><a href="${post.link}">${post.title}</a></h3>
             <p>${post.excerpt}</p>
           `;
-
           container.appendChild(card);
         });
       });
